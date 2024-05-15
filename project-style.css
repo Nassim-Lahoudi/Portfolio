@@ -80,9 +80,7 @@ button:hover{
 }
 
 .foot-container{
-    /*
-    edit margin after setting widgets
-    */
+    /* Abstand von Label zu Footer */
     margin-top: 30rem;
     background-color: #0D161B;
     height: 15rem;

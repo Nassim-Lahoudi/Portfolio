@@ -44,6 +44,7 @@ ul{
 
 .foot-container{
     /* Abstand von Label zu Footer */
+    margin-top: 40rem;
     background-color: #0D161B;
     height: 15rem;
 }
