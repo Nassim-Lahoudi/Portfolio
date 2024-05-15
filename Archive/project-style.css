@@ -5,24 +5,11 @@ body{
     user-select: none;
 }
 
-h1{
+h1, p{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
     text-align: center;
-}
-
-p{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-}
-
-h3{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
 }
 
 a{
@@ -76,7 +63,8 @@ button:hover{
 }
 
 .main-container{
-    display: inline;
+    display: flex;
+    margin-top: 6rem;
 }
 
 .foot-container{
@@ -98,6 +86,17 @@ button:hover{
     height: 4rem;
 }
 
+.p-description-style-left{
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 3rem;
+}
+
+.p-description-style-right{
+    font-size: 1rem;
+    text-align: right;
+}
+
 .p-pos{
     text-align: right;
 }
@@ -115,41 +114,6 @@ button:hover{
 .a-style{
     position: fixed;
 
-}
-
-.headline-left-style{
-    text-align: left;
-    margin-left: 10rem;
-}
-
-.p-left-style{
-    text-align: left;
-    margin-left: 10rem;
-}
-
-.headline-right-style{
-    text-align: right;
-    margin-right: 10rem;
-
-}
-
-.p-right-style{
-    text-align: right;
-    margin-right: 10rem;
-}
-
-
-.button-left{
-    margin-left: 10rem
-}
-
-.button-right{
-    margin-left: 102rem;
-}
-
-
-.project-container{
-    margin-top: 10rem;
 }
 
 #p-text{
@@ -175,4 +139,12 @@ button:hover{
 
 #project-pos{
     text-align: right;
+}
+
+#button-pos{
+    margin-left: 3rem
+}
+
+#button-pos2{
+    margin-left: 80rem;
 }

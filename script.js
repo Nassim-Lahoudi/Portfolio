@@ -4,12 +4,17 @@ function emailFunction(){
     alert("\nErfolgreich zur Zwischenablage kopiert \n" + email)
 }
 
-function projectOneFunction(){
+function vfpcFunction(){
     let link = "https://github.com/SkyNiteTV/VFPC-VIRUS";
     location.href = link;
 }
 
-function projectTwoFunction(){
-    let link = "https://github.com/SkyNiteTV?tab=repositories";
+function aysFunction(){
+    let link = "https://github.com/SkyNiteTV/Are-you-Stupid-Game";
+    location.href = link;
+}
+
+function recipeFunction(){
+    let link = "https://github.com/SkyNiteTV/Recipe-App";
     location.href = link;
 }
