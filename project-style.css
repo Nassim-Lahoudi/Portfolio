@@ -1,0 +1,146 @@
+body{
+    margin: 0;
+    position:relative ;
+    background-color: #2D2B55;
+    user-select: none;
+}
+
+h1, p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    margin-inline: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: white;
+    display: inline-flex;
+    margin-top: 2rem;
+}
+
+button{
+    background-color: #2D2B55;
+    border-style: solid;
+    border-radius: 0.5rem;
+    border-color: #0D161B;
+    padding: 1rem;
+    width: 7rem;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #0D161B;
+}
+
+.list-style{
+    color: white;
+    font-size: 1rem;
+}
+
+.text-pic-container{
+    align-items: center;
+    display: flex;
+    margin-bottom: 15rem;
+    margin-top: 10rem;
+}
+
+.navbar-container{
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.main-container{
+    display: flex;
+    margin-top: 6rem;
+}
+
+.foot-container{
+    /*
+    edit margin after setting widgets
+    */
+    margin-top: 30rem;
+    background-color: #0D161B;
+    height: 15rem;
+}
+
+.img-links{
+    margin-left: 80rem;
+}
+
+.img-style{
+    width: auto;
+    height: 4rem;
+}
+
+.p-description-style{
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 3rem;
+}
+
+.p-pos{
+    text-align: right;
+    margin-right: 6.7rem;
+}
+
+.p-color{
+    color: red;
+    font-weight: bold;
+}
+
+.project-style{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.a-style{
+    position: fixed;
+
+}
+
+#p-text{
+    text-align: left;
+    font-size: 1.3rem;
+    margin-top: 8rem;
+    margin-left: 15rem;
+}
+
+#picture-nassim{
+    width: 19rem;
+    height:25rem;
+    margin-left: 15rem;
+}
+
+#copyright-style{
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin-top: 4rem;
+    margin-left: 6rem;
+}
+
+#project-pos{
+    margin-left: 72rem;
+    text-align: right;
+}
+
+#button-pos{
+    margin-left: 3rem;
+}
+
+#button-pos2{
+    margin-left: 80rem;
+}
