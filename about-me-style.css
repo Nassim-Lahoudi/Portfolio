@@ -23,7 +23,7 @@ h1, h2{
 h3{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 p{
@@ -72,6 +72,7 @@ a{
     color: grey;
     margin-left: 3rem;
     margin-top: 8rem;
+    font-size: 1rem;
 }
 
 .footer-media-container{

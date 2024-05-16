@@ -1,28 +1,35 @@
 body{
-    margin: 0;
-    position:relative ;
+    margin: 0rem;
     background-color: #2D2B55;
-    user-select: none;
+    position: relative;
 }
 
-h1{
+li{
+    list-style: none;
+    color: white;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline;
+    margin-inline: 2.5rem;
+}
+
+h1, h2{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2rem;
     text-align: center;
 }
 
-p{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-}
-
 h3{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
     font-size: 1.5rem;
+}
+
+p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
 }
 
 a{
@@ -30,147 +37,71 @@ a{
     color: white;
 }
 
-ul{
-    list-style: none;
+/* Nav Section */
+
+.navbar-container{
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 6rem;
 }
 
-li{
-    margin-inline: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    color: white;
-    display: inline-flex;
-    margin-top: 2rem;
+/* Main Section */
+
+.main-content{
+    margin-top: 6rem;
+    margin-bottom: 10rem;
 }
 
-button{
-    background-color: #2D2B55;
+.main-link-style{
     border-style: solid;
-    border-radius: 0.5rem;
-    border-color: #0D161B;
-    padding: 1rem;
-    width: 7rem;
+    border-radius: 1rem;
+    width: 6rem;
+    height: 3rem;
+    background-color: #2D2B55;
     color: white;
     cursor: pointer;
 }
 
-button:hover{
+.main-link-style:hover{
     background-color: #0D161B;
 }
 
-.list-style{
-    color: white;
-    font-size: 1rem;
+.main-left-project-container{
+    margin-left: 6rem;
 }
 
-.text-pic-container{
-    align-items: center;
-    display: flex;
-    margin-bottom: 15rem;
-    margin-top: 10rem;
+.main-right-project-container{
+    text-align: right;
+    margin-right: 6rem;
 }
 
-.navbar-container{
-    text-align: center;
-    margin-bottom: 6rem;
-}
+/* Footer Section */
 
-.main-container{
-    display: inline;
-}
-
-.foot-container{
-    /* Abstand von Label zu Footer */
-    margin-top: 30rem;
+.footer-container{
     background-color: #0D161B;
     height: 15rem;
 }
 
-.img-links{
-    text-align: right;
-    margin-right: 10rem;
+.footer-list-container{
+    margin-top: 3rem;
+    margin-left: 3rem;
+    position: absolute;
 }
 
-.img-style{
+.footer-copyright{
+    color: grey;
+    margin-left: 3rem;
+    margin-top: 8rem;
+    font-size: 1rem;
+}
+
+.footer-media-container{
+    text-align: right;
+    margin-right: 3rem;
+}
+
+.footer-media-style{
     width: auto;
     height: 4rem;
-}
-
-.p-pos{
-    text-align: right;
-}
-
-.p-color{
-    color: red;
-    font-weight: bold;
-}
-
-.project-style{
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.a-style{
-    position: fixed;
-
-}
-
-.headline-left-style{
-    text-align: left;
-    margin-left: 10rem;
-}
-
-.p-left-style{
-    text-align: left;
-    margin-left: 10rem;
-}
-
-.headline-right-style{
-    text-align: right;
-    margin-right: 10rem;
-
-}
-
-.p-right-style{
-    text-align: right;
-    margin-right: 10rem;
-}
-
-
-.button-left{
-    margin-left: 10rem
-}
-
-.button-right{
-    margin-left: 102rem;
-}
-
-
-.project-container{
-    margin-top: 10rem;
-}
-
-#p-text{
-    text-align: left;
-    font-size: 1.3rem;
-    margin-top: 8rem;
-    margin-left: 15rem;
-}
-
-#picture-nassim{
-    width: 19rem;
-    height:25rem;
-    margin-left: 15rem;
-}
-
-#copyright-style{
-    color: grey;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    margin-top: 4rem;
-    margin-left: 6rem;
-}
-
-#project-pos{
-    text-align: right;
+    margin-top: 3rem;
 }
