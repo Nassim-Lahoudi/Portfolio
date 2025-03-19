@@ -1,0 +1,130 @@
+/*complete css*/
+
+body{
+    background-color: aliceblue;
+    margin: 0px;
+    user-select: none;
+}
+
+h1, h2, h3, a, p, li{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    list-style-type: none;
+}
+
+.list-nav-css{
+    display: inline;
+    margin-inline: 25px;
+}
+
+.link-css{
+    font-size: 22px;
+}
+
+.link-css:hover{
+    color: #2596be;
+}
+
+.list-css{
+    list-style-type: square;
+    font-size: 22px;
+    padding: 10px;
+}
+
+/*Header css*/
+
+.header-container{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.header-navbar-container{
+    margin-bottom: 100px;
+}
+
+/*Main css*/
+
+.main-container{
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.name-css{
+    text-align: center;
+    font-size: 50px;
+}
+
+.content-container{
+    display: flex;
+    margin-top: 120px;
+}
+
+.img-css{
+    width: auto;
+    height: 650px;
+}
+
+.p-css{
+    font-size: 24px;
+}
+
+.description-container{
+    margin-right: 100px;
+    margin-top: 205px;
+}
+
+.box-container{
+    border: 4px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    width: 950px;
+    display: flex;
+}
+
+.github-link-css{
+    width: auto;
+    height: 200px;
+    margin-left: 275px;
+    margin-top: 50px;
+}
+
+.impressum-container{
+    margin-top: 120px;
+}
+
+.img-container{
+    margin-left: 100px;
+}
+
+.list-container{
+    margin-top: 50px;
+}
+
+/*Footer css*/
+
+.footer-container{
+    padding: 40px;
+    margin-top: 200px;
+    background-color: lightblue;
+}
+
+.footer-navbar-container{
+    position: relative;
+    margin-inline: 25px;
+}
+
+.footer-right-links-container{
+    text-align: right;
+}
+
+.img-links-css{
+    width: auto;
+    height: 100px;
+}
+
+.copyright-css{
+    font-size: 22px;
+    margin-left: 140px;
+}
