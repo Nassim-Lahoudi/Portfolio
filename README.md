@@ -1,6 +1,6 @@
 <header>
 <h1>💼 Nassim Lahoudi - Mein Portfolio</h1>
-<br>
+
 <p>Willkommen in meinem GitHub-Portfolio! 🎉<br>Hier findest du eine Sammlung meiner <strong>Projekte</strong>, die meine <strong>Fähigkeiten</strong>, <strong>Kreativität</strong> und <strong>Leidenschaft für die Softwareentwicklung</strong> widerspiegeln.</p>
 </header>
 <section>
@@ -16,7 +16,7 @@
 </ul>
 </section>
 <section>
-<br>
+
 <h2>🛠️ Fähigkeiten</h2>
 <ul>
 <li><strong>Programmiersprachen:</strong> Python, HTML/CSS</li>
@@ -25,7 +25,7 @@
 </ul>
 </section>
 <section>
-<br>
+
 <h2>📬 Kontakt</h2>
 <p>Ich freue mich über Feedback, Kollaborationen oder einfach einen Austausch!<br>Du kannst mich erreichen über:</p>
 <ul>
