@@ -1,0 +1,5 @@
+body, html{
+    user-select: none;
+    margin: 0;
+    background-color: black;
+}
