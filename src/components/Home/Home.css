@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Grundlayout */
+body, html {
+    user-select: none;
+    margin: 0;
+    background-color: #0d0d0d;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    list-style-type: none;
+}
+
+/* Navbar-Container */
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* UL-Styling */
+.unordered-list {
+    box-shadow: 1px 0px 10px #0a0a0a;
+    background-color: #151515;
+    justify-content: center;
+    border-radius: 100rem;
+    padding: 40px;
+    width: auto;
+    display: flex;
+    gap: 100px;
+}
+
+.symbol-navbar{
+    width: auto;
+    height: 30px;
+}
+
+.main-content-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+
+}
+
+#home-text{
+    color: #8b8b8b;
+    text-align: center;
+    font-size: 100px;
+}
+
+.serif-font{
+    font-family: "PT Serif", serif;
+}
