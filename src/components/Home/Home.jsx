@@ -15,13 +15,13 @@ function Home() {
                     <ul className="navbar-list">
                         {/* Einzelne Navigationspunkte mit Symbolen */}
                         <li className="navbar-item">
-                            <Link to="/About">
+                            <Link to="/">
                                 {/* Home-Symbol */}
                                 <img src="src/assets/home-symbol.png" alt="Home" className="navbar-icon" />
                             </Link>
                         </li>
                         <li className="navbar-item">
-                            <Link to="/About">
+                            <Link to="/Project">
                                 {/* Code-Terminal-Symbol */}
                                 <img src="src/assets/code-termial-symbol.png" alt="Code Terminal" className="navbar-icon" />
                             </Link>
@@ -33,7 +33,7 @@ function Home() {
                             </Link>
                         </li>
                         <li className="navbar-item">
-                            <Link to="/About">
+                            <Link to="/Contact">
                                 {/* Email-Symbol */}
                                 <img src="src/assets/email-symbol.png" alt="Email" className="navbar-icon" />
                             </Link>
