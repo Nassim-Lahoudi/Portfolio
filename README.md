@@ -2,14 +2,6 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio – README</title>
-  <style>
-    body { font-family: Arial, Helvetica, sans-serif; background: #f7f7f7; color: #222; margin: 2em; }
-    h1, h2 { color: #0d0d0d; }
-    code, pre { background: #eaeaea; padding: 2px 6px; border-radius: 4px; }
-    ul { margin-left: 1.5em; }
-    .section { margin-bottom: 2em; }
-  </style>
 </head>
 <body>
   <h1>Portfolio – README</h1>
