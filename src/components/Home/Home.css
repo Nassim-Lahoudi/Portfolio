@@ -1,25 +1,30 @@
 /* Home.css
-   Enthält alle Styles für die Home-Komponente und deren Unterelemente.
+   Styles für die Home-Komponente und deren Unterelemente.
+   Ausführliche Kommentare für jeden Abschnitt.
 */
 
-/* Importiert die Schriftart PT Serif von Google Fonts */
+/* ---------- Schriftarten ---------- */
+/* Importiert PT Serif von Google Fonts für Überschriften */
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Grundlayout für die Seite und das HTML-Dokument */
+/* ---------- Grundlayout ---------- */
+/* Basis-Layout für die Seite und Body */
 .home-page, html, body {
     margin: 0; /* Entfernt Standardabstände */
-    user-select: none; /* Verhindert das Markieren von Text */
-    background-color: #0d0d0d; /* Dunkler Hintergrund */
+    user-select: none; /* Verhindert Textauswahl */
+    background-color: #0d0d0d; /* Dunkler Hintergrund für modernen Look */
 }
 
-/* Standard-Schrift und Farbe für alle Elemente */
+/* ---------- Standard-Schrift und Listenstil ---------- */
+/* Setzt globale Schriftart und entfernt Listenpunkte */
 * {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    list-style-type: none; /* Entfernt Listenpunkte */
+    list-style-type: none;
 }
 
-/* Header-Bereich mit zentrierter Navigation */
+/* ---------- Header & Navigation ---------- */
+/* Zentriert den Header und fügt Abstand oben hinzu */
 .home-header {
     display: flex;
     justify-content: center;
@@ -34,31 +39,32 @@
     justify-content: center;
 }
 
-/* Liste der Navigationssymbole mit Schatten und abgerundeten Ecken */
+/* Navigation-Liste mit Schatten und abgerundeten Ecken */
 .navbar-list {
-    box-shadow: 0px 5px 10px 5px #0a0a0a;
+    box-shadow: 0px 5px 10px 5px #0a0a0a; /* Tiefe durch Schatten */
     background-color: #151515;
     display: flex;
-    gap: 100px; /* Abstand zwischen Symbolen */
+    gap: 100px; /* Abstand zwischen Icons */
     border-radius: 100rem;
     padding: 40px;
     width: auto;
     justify-content: center;
 }
 
-/* Einzelnes Navigationselement */
+/* Einzelne Navigationseinträge */
 .navbar-item {
     display: flex;
     align-items: center;
 }
 
-/* Größe der Navigationssymbole */
+/* Navigation-Icons */
 .navbar-icon {
     height: 30px;
     width: auto;
 }
 
-/* Hauptinhalt der Seite */
+/* ---------- Hauptinhalt ---------- */
+/* Zentriert den Hauptinhalt vertikal und horizontal */
 .home-main {
     display: flex;
     flex-direction: column;
@@ -67,7 +73,8 @@
     height: 75vh;
 }
 
-/* Auswahl-Sektion für die Buttons */
+/* ---------- Auswahl-Sektion ---------- */
+/* Zentriert die Auswahl-Buttons */
 .selection-section {
     display: flex;
     justify-content: center;
@@ -75,7 +82,7 @@
     width: 100%;
 }
 
-/* Liste der Auswahl-Buttons */
+/* Liste der Auswahl-Buttons horizontal angeordnet */
 .selection-list {
     padding: 0;
     display: flex;
@@ -84,7 +91,7 @@
     align-items: center;
 }
 
-/* Style für die Auswahl-Buttons */
+/* Einzelner Auswahl-Button */
 .selection-btn {
     text-align: center;
     background-color: #171717;
@@ -94,7 +101,8 @@
     box-shadow: 0 0 20px 0 #222, 0 0 0 8px #151515 inset;
 }
 
-/* Intro-Sektion mit Titel und Untertitel */
+/* ---------- Intro-Sektion ---------- */
+/* Zentriert die Intro-Texte */
 .intro-section {
     display: flex;
     flex-direction: column;
@@ -102,7 +110,7 @@
     align-items: center;
 }
 
-/* Haupttitel */
+/* Hauptüberschrift */
 .intro-title {
     color: #8b8b8b;
     text-align: center;
@@ -118,12 +126,13 @@
     margin-top: 25px;
 }
 
-/* Serif-Schrift für bestimmte Texte */
+/* Serif-Schrift für Überschriften */
 .serif-font {
     font-family: "PT Serif", serif;
 }
 
-/* Aktions-Sektion mit Buttons */
+/* ---------- Aktions-Sektion ---------- */
+/* Zentriert die Aktions-Buttons und fügt Abstand hinzu */
 .action-section {
     display: flex;
     justify-content: center;
@@ -132,22 +141,22 @@
     margin: 0;
 }
 
-/* Primärer Button */
+/* Primärer Button mit Farbverlauf und Schatten */
 .primary-btn {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px; /* Etwas größer für bessere Lesbarkeit */
-    background: linear-gradient(90deg, #cde8bf 0%, #b6e3a8 100%); /* Sanfter Farbverlauf */
-    border-radius: 2rem; /* Etwas stärker abgerundet */
+    font-size: 18px;
+    background: linear-gradient(90deg, #cde8bf 0%, #b6e3a8 100%);
+    border-radius: 2rem;
     border: none;
     color: #0d0d0d;
-    width: 190px; /* Breiter */
-    height: 80px; /* Höher */
+    width: 190px;
+    height: 80px;
     font-weight: bold;
     transition: box-shadow 0.2s, transform 0.2s;
     box-shadow: 0 4px 24px 0 #b6e3a880;
 }
 
-/* Sekundärer Button */
+/* Sekundärer Button mit dunklem Farbverlauf */
 .secondary-btn {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
@@ -162,9 +171,146 @@
     box-shadow: 0 4px 24px 0 #23232380;
 }
 
-/* Hover-Effekt für Buttons */
+/* Hover-Effekt für Buttons: Schatten und leichte Vergrößerung */
 .btn-style:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px #b6e3a8, 0px 0px 10px 0px #232323;
     transform: translateY(-3px) scale(1.04);
+}
+
+/* ---------- Footer ---------- */
+/* Zentriert die Footer-Sektion */
+.footer-selection-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Social Media Icons horizontal anordnen */
+.footer-selection-list {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 30px;
+}
+
+/* Social Media Icons: Größe und Animation für Hover */
+.footer-navbar-icon {
+    width: auto;
+    height: 50px;
+    transition: transform 0.2s, box-shadow 0.2s; /* Animation für Hover */
+}
+
+/* Hover-Effekt für Social-Media-Icons im Footer:
+   - Vergrößert das Icon
+   - Fügt einen grünen und dunklen Schatten hinzu
+   - Zeigt einen Pointer-Cursor */
+.footer-navbar-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 18px 0 #b6e3a8, 0 0 8px 0 #232323;
+    cursor: pointer;
+}
+
+/* ---------- Responsive Design: Handy & Tablet ---------- */
+/* Für Geräte mit maximal 900px Breite (Tablet und kleiner) */
+@media (max-width: 900px) {
+    .home-header {
+        margin-top: 15px;
+    }
+
+    .navbar-list {
+        gap: 40px; /* Weniger Abstand zwischen Icons */
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .navbar-icon {
+        height: 26px;
+    }
+
+    .home-main {
+        height: auto;
+        padding: 30px 10px;
+    }
+
+    .intro-title {
+        font-size: 48px;
+    }
+
+    .intro-subtitle {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+
+    .selection-list {
+        gap: 10px;
+        flex-wrap: wrap; /* Buttons umbrechen bei wenig Platz */
+    }
+
+    .selection-btn {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .action-section {
+        gap: 10px;
+        flex-direction: column; /* Buttons untereinander */
+        align-items: stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        min-width: 140px;
+        height: 60px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .footer-selection-list {
+        gap: 18px;
+    }
+
+    .footer-navbar-icon {
+        height: 36px;
+    }
+}
+
+/* Für Geräte mit maximal 600px Breite (Smartphone) */
+@media (max-width: 600px) {
+    .navbar-list {
+        gap: 20px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .navbar-icon {
+        height: 22px;
+    }
+
+    .intro-title {
+        font-size: 32px;
+    }
+
+    .intro-subtitle {
+        font-size: 15px;
+    }
+
+    .selection-btn {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        height: 48px;
+        font-size: 14px;
+        min-width: 100px;
+    }
+
+    .footer-navbar-icon {
+        height: 28px;
+    }
 }

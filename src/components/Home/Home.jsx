@@ -1,81 +1,92 @@
 // Home.jsx
-// Dieses React-Komponenten-File stellt die Startseite des Portfolios dar.
-// Es enthält die Navigation, eine Auswahl-Sektion, eine Intro-Sektion und eine Aktions-Sektion.
+// Diese Komponente bildet die Startseite des Portfolios ab.
+// Sie enthält Navigation, Auswahlmöglichkeiten, ein Intro und einen Footer mit Social Links.
 
-import { Link } from "react-router-dom"; // Ermöglicht das Navigieren zwischen Seiten
-import './Home.css'; // Importiert die zugehörigen CSS-Styles
+import { Link } from "react-router-dom"; // Ermöglicht das Routing zwischen Seiten
+import './Home.css'; // Bindet die zugehörigen CSS-Styles ein
 
 function Home() {
     return (
-        // Hauptcontainer der Seite
         <div className="home-page">
-            {/* Header mit Navigation */}
+            {/* ---------- Header mit Navigation ---------- */}
             <header className="home-header">
                 <nav className="navbar">
                     <ul className="navbar-list">
-                        {/* Einzelne Navigationspunkte mit Symbolen */}
-                        <li className="navbar-item">
-                            <Link to="/">
-                                {/* Home-Symbol */}
-                                <img src="src/assets/home-symbol.png" alt="Home" className="navbar-icon" />
-                            </Link>
-                        </li>
-                        <li className="navbar-item">
-                            <Link to="/Project">
-                                {/* Code-Terminal-Symbol */}
-                                <img src="src/assets/code-termial-symbol.png" alt="Code Terminal" className="navbar-icon" />
-                            </Link>
-                        </li>
-                        <li className="navbar-item">
-                            <Link to="/About">
-                                {/* About-Me-Symbol */}
-                                <img src="src/assets/aboutme-symbol.png" alt="About Me" className="navbar-icon" />
-                            </Link>
-                        </li>
-                        <li className="navbar-item">
-                            <Link to="/Contact">
-                                {/* Email-Symbol */}
-                                <img src="src/assets/email-symbol.png" alt="Email" className="navbar-icon" />
-                            </Link>
-                        </li>
+                        {/* Navigation: Jede Seite als Icon-Link */}
+                        {[
+                            { to: "/", img: "src/assets/home-symbol.png", alt: "Home" },
+                            { to: "/Project", img: "src/assets/code-termial-symbol.png", alt: "Code Terminal" },
+                            { to: "/About", img: "src/assets/aboutme-symbol.png", alt: "About Me" },
+                            { to: "/Contact", img: "src/assets/email-symbol.png", alt: "Email" }
+                        ].map((item, idx) => (
+                            <li className="navbar-item" key={idx}>
+                                {/* Link zu jeweiliger Route mit Icon */}
+                                <Link to={item.to}>
+                                    <img src={item.img} alt={item.alt} className="navbar-icon" />
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </header>
-            {/* Hauptinhalt der Seite */}
+
+            {/* ---------- Hauptinhalt ---------- */}
             <main className="home-main">
-                {/* Auswahl-Sektion mit Buttons */}
+                {/* Auswahl-Sektion: Zeigt verschiedene Schwerpunkte als Buttons */}
                 <section className="selection-section">
                     <ul className="selection-list">
-                        <li>
-                            <button className="selection-btn">Web Design</button>
-                        </li>
-                        <li>
-                            <button className="selection-btn">UX & UI Design</button>
-                        </li>
-                        <li>
-                            <button className="selection-btn">Branding</button>
-                        </li>
+                        {["Web Design", "UX & UI Design", "Branding"].map((text, idx) => (
+                            <li key={idx}>
+                                <button className="selection-btn">{text}</button>
+                            </li>
+                        ))}
                     </ul>
                 </section>
-                {/* Intro-Sektion mit Titel und Untertitel */}
+
+                {/* Intro-Sektion: Name und Berufung */}
                 <section className="intro-section">
                     <h1 className="intro-title serif-font">
                         I'm Nassim,<br />
-                        {/* Hervorgehobener Text für Berufsbezeichnung */}
+                        {/* Hervorgehobener Beruf mit weißer Schrift */}
                         <span style={{ color: 'white' }} className="serif-font">Software Developer.</span>
                     </h1>
                     <p className="intro-subtitle">
                         Frankfurt-based aspiring software developer building tomorrow’s tech.
                     </p>
                 </section>
-                {/* Aktions-Sektion mit zwei Buttons */}
+
+                {/* Aktions-Sektion: Buttons für weitere Aktionen */}
                 <section className="action-section">
+                    {/* Primärer Button für Hauptaktion */}
                     <button className="primary-btn btn-style">See work</button>
+                    {/* Sekundärer Button für alternative Aktion */}
                     <button className="secondary-btn btn-style">See work</button>
                 </section>
             </main>
+
+            {/* ---------- Footer mit Social Media Links ---------- */}
+            <footer className="home-footer">
+                <section className="footer-selection-section">
+                    <ul className="footer-selection-list">
+                        {/* Social Media Links als Icons */}
+                        {[
+                            { href: "https://github.com/Nassim-Lahoudi", img: "src/assets/github-symbol.png", alt: "GitHub" },
+                            { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: "src/assets/linkedin-symbol.png", alt: "LinkedIn" },
+                            { href: "https://dev.to/nassim-lahoudi", img: "src/assets/dev-symbol.png", alt: "Dev.to" }
+                        ].map((item, idx) => (
+                            <li key={idx}>
+                                {/* Externer Link mit Sicherheitsattributen */}
+                                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                                    {/* Icon mit Hover-Effekt (siehe CSS) */}
+                                    <img src={item.img} alt={item.alt} className="footer-navbar-icon"/>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            </footer>
         </div>
     );
 }
 
-export default Home; // Exportiert die Komponente für die Verwendung in anderen Dateien
+export default Home; // Exportiert die Komponente für die Verwendung in anderen Komponenten
