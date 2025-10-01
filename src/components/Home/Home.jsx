@@ -54,13 +54,16 @@ function Home() {
                         Frankfurt-based aspiring software developer building tomorrow’s tech.
                     </p>
                 </section>
-
                 {/* Aktions-Sektion: Buttons für weitere Aktionen */}
                 <section className="action-section">
-                    {/* Primärer Button für Hauptaktion */}
-                    <button className="primary-btn btn-style">See work</button>
+                    {/* Primärer Button als Link zur Project-Seite */}
+                    <Link to="/Project" className="primary-btn btn-style">
+                        See Projects
+                    </Link>
                     {/* Sekundärer Button für alternative Aktion */}
-                    <button className="secondary-btn btn-style">See work</button>
+                    <Link to="/Project" className="secondary-btn btn-style">
+                        Contact me
+                    </Link>
                 </section>
             </main>
 
