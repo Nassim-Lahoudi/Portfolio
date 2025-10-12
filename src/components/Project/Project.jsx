@@ -3,9 +3,9 @@
 // Sie enthält Navigation, Auswahlmöglichkeiten, ein Intro und einen Footer mit Social Links.
 
 import { Link } from "react-router-dom"; // Ermöglicht das Routing zwischen Seiten
-import './Contact.css'; // Bindet die zugehörigen CSS-Styles ein
+import './Project.css'; // Bindet die zugehörigen CSS-Styles ein
 
-function Contact() {
+function Project() {
     return (
         <div className="home-page">
             {/* ---------- Header mit Navigation ---------- */}
@@ -63,4 +63,4 @@ function Contact() {
     );
 }
 
-export default Contact; // Exportiert die Komponente für die Verwendung in anderen Komponenten
+export default Project; // Exportiert die Komponente für die Verwendung in anderen Komponenten
