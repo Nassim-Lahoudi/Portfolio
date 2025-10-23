@@ -15,6 +15,19 @@ Ausführliche Kommentare für jeden Abschnitt.
     background-color: #0d0d0d; /* Dunkler Hintergrund für modernen Look */
 }
 
+/* Positionierung: container relative damit absolute Particles korrekt hinter dem Inhalt liegen */
+.home-page {
+    position: relative;
+}
+
+/* Header, Main und Footer explizit über Particles platzieren */
+.home-header,
+.home-main,
+.home-footer {
+    position: relative;
+    z-index: 1;
+}
+
 /* ---------- Standard-Schrift und Listenstil ---------- */
 /* Setzt globale Schriftart und entfernt Listenpunkte */
 * {

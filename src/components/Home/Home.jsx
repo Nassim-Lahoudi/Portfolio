@@ -4,10 +4,13 @@
 
 import { Link } from "react-router-dom"; // Ermöglicht das Routing zwischen Seiten
 import './Home.css'; // Bindet die zugehörigen CSS-Styles ein
+import ParticlesBackground from '../Particles/Particles';
 
 function Home() {
     return (
         <div className="home-page">
+            {/* Particles-Hintergrund */}
+            <ParticlesBackground />
             {/* ---------- Header mit Navigation ---------- */}
             <header className="home-header">
                 <nav className="navbar">
