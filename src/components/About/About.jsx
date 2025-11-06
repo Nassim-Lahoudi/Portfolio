@@ -31,10 +31,12 @@ function About() {
             </header>
 
             {/* ---------- Hauptinhalt ---------- */}
-            <main className="home-main">
+            <main className="home-main about-main">
                 {/* Auswahl-Sektion: Zeigt verschiedene Schwerpunkte als Buttons */}
-                <section className="selection-section">
-
+                <section className="home-main-selection-section">
+                    <div className="profile-img-container">
+                        <img src="src/assets/nassim-lahoudi.png" alt="Nassim Lahoudi Bild" className="profile-img" />
+                    </div>
                 </section>
             </main>
 
