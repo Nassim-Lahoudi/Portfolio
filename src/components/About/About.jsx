@@ -37,6 +37,14 @@ function About() {
                     <div className="profile-img-container">
                         <img src="src/assets/nassim-lahoudi.png" alt="Nassim Lahoudi Bild" className="profile-img" />
                     </div>
+                    <div className="profile-text-container">
+                        <p className="profile-text">
+                            Passionate developer focused on
+                            clean code and efficient solutions. <br/>
+                            Experienced in modern technologies and
+                            always eager to learn new things. <br/>
+                        </p>
+                    </div>
                 </section>
             </main>
 

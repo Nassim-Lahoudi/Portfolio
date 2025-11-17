@@ -13,8 +13,8 @@
     display: block;
     width: 340px;
     max-width: 100%;
-    margin-top: 20vh;
-    margin-left: 4rem;
+    margin-top: 24vh; /* Bild weiter nach unten */
+    margin-left: 15rem;
 }
 
 .profile-img{
@@ -22,6 +22,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    object-position: top center;
 }
 
 .profile-text-style{
@@ -29,15 +30,44 @@
     background-color: white;
 }
 
+.profile-text-container{
+    display: block;
+    text-align: center;
+    max-width: 60%;
+    margin-top: 34vh; /* an Bild ausrichten */
+    margin-right: 15rem;
+}
+
+.profile-text{
+    font-size: 22.5px;
+    line-height: 2;
+}
+
+.home-main-selection-section{
+    display: flex;
+    align-items: flex-start;
+    gap: 10rem;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    list-style-type: none;
+}
+
 @media (max-width: 900px){
     .about-main { padding: 2.5rem; gap: 2.5rem; }
     .profile-img-container { width: 300px; }
+    .profile-text-container { margin-top: 22vh; max-width: 55%; }
 }
 @media (max-width: 600px){
     .about-main { padding: 2rem; gap: 2rem; }
     .profile-img-container { width: 240px; }
+    .profile-text-container { margin-top: 18vh; max-width: 60%; }
 }
 @media (max-width: 420px){
     .about-main { padding: 1.5rem; gap: 1.5rem; }
     .profile-img-container { width: 190px; }
+    .home-main-selection-section { flex-direction: column; align-items: center; }
+    .profile-text-container { margin-top: 1rem; max-width: 100%; text-align: center; }
 }
