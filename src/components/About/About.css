@@ -1,7 +1,7 @@
 .about-main { /* nur About Seite */
     display: flex;
-    justify-content: flex-start; /* Bild links */
-    align-items: flex-start;
+    justify-content: center; /* zentriert */
+    align-items: center;
     gap: 3rem; /* Platz für späteren Text rechts */
     min-height: 60vh;
 }
@@ -10,32 +10,22 @@
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
-    display: block;
     width: 340px;
-    max-width: 100%;
-    margin-top: 24vh; /* Bild weiter nach unten */
-    margin-left: 15rem;
+    display: flex;
+    /* margin-left: 15rem; */
 }
 
 .profile-img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     object-position: top center;
-}
-
-.profile-text-style{
-    color: white;
-    background-color: white;
+    /* display: block; */
 }
 
 .profile-text-container{
-    display: block;
+    display: flex;
     text-align: center;
-    max-width: 60%;
-    margin-top: 34vh; /* an Bild ausrichten */
-    margin-right: 15rem;
 }
 
 .profile-text{
@@ -45,7 +35,9 @@
 
 .home-main-selection-section{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
     gap: 10rem;
 }
 
@@ -55,19 +47,19 @@
     list-style-type: none;
 }
 
-@media (max-width: 900px){
+/* @media (max-width: 1500px){
     .about-main { padding: 2.5rem; gap: 2.5rem; }
-    .profile-img-container { width: 300px; }
-    .profile-text-container { margin-top: 22vh; max-width: 55%; }
+    .profile-img-container { width: 400px; }
+    .profile-text-container { margin-top: 35vh; max-width: 55%; white-space: nowrap;}
 }
-@media (max-width: 600px){
-    .about-main { padding: 2rem; gap: 2rem; }
-    .profile-img-container { width: 240px; }
-    .profile-text-container { margin-top: 18vh; max-width: 60%; }
+@media (max-width: 1200px){
+    .about-main { padding: 2.5rem; gap: 2.5rem; }
+    .profile-img-container { width: 400px; }
+    .profile-text-container { margin-top: 35vh; max-width:55%; white-space: nowrap;}
 }
-@media (max-width: 420px){
+@media (max-width: 720px){
     .about-main { padding: 1.5rem; gap: 1.5rem; }
-    .profile-img-container { width: 190px; }
+    .profile-img-container { width: 230px; }
     .home-main-selection-section { flex-direction: column; align-items: center; }
     .profile-text-container { margin-top: 1rem; max-width: 100%; text-align: center; }
-}
+} */
