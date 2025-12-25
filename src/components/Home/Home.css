@@ -32,7 +32,7 @@ Ausführliche Kommentare für jeden Abschnitt.
 /* Setzt globale Schriftart und entfernt Listenpunkte */
 * {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    /* color: white; */
     list-style-type: none;
 }
 

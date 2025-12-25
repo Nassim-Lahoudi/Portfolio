@@ -1,0 +1,67 @@
+.contact-main{
+    display: flex;
+    justify-content: flex-start;
+    height: auto; /* Erlaubt automatische Höhe basierend auf Inhalt */
+    min-height: 70vh; /* Behält Mindesthöhe */
+}
+
+.headline-container{
+    margin-top: 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-name-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    gap: 3rem;
+}
+
+.input-email-container{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-normale-style {
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.input-big-style {
+    padding: 1rem;
+    border-radius: 1rem;
+    height: 5rem;
+}
+
+.label-style {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.btn-submit-style{
+    width: 27rem;
+    height: 3rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: black;
+}
+
+#intro-subtitle-white{
+    color: white;
+}

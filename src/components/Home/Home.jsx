@@ -64,7 +64,7 @@ function Home() {
                         See Projects
                     </Link>
                     {/* Sekundärer Button für alternative Aktion */}
-                    <Link to="/Project" className="secondary-btn btn-style">
+                    <Link to="/Contact" className="secondary-btn btn-style">
                         Contact me
                     </Link>
                 </section>
