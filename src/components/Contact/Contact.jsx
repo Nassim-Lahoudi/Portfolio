@@ -31,6 +31,15 @@ function Contact() {
                 setTimeout(() => setStatus(''), 5000);
             });
     };
+
+    const openEmail = () => {
+        const email = "info@nassim-lahoudi.de";
+        const subject = "Hello from my portfolio";
+        const body = "Hi, I would like to get in touch.";
+
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    };
+
     return (
         <div className="home-page">
             {/* ---------- Header mit Navigation ---------- */}
@@ -67,30 +76,31 @@ function Contact() {
                         <div className="input-name-container">
                             <div className="input-group">
                                 <label htmlFor="firstname" className="label-style">First name</label>
-                                <input type="text" name="firstname" id="firstname-input" className="input-normale-style" placeholder="First name" required />
+                                <input type="text" name="firstname" id="firstname-input" className="input-normale-style" placeholder="First name" required onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} onInput={(e) => e.target.setCustomValidity("")}/>
                             </div>
 
                             <div className="input-group">
                                 <label htmlFor="lastname" className="label-style">Last name</label>
-                                <input type="text" name="lastname" id="lastname-input" className="input-normale-style" placeholder="Last name" required />
+                                <input type="text" name="lastname" id="lastname-input" className="input-normale-style" placeholder="Last name" required onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} onInput={(e) => e.target.setCustomValidity("")}/>
                             </div>
                         </div>
                         <div className="input-email-container">
                             <div className="input-group">
                                 <label htmlFor="email" className="label-style">E-Mail</label>
-                                <input type="email" name="email" id="email-input" className="input-normale-style" placeholder="you@company.com" required />
+                                <input type="email" name="email" id="email-input" className="input-normale-style" placeholder="you@company.com" required onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} onInput={(e) => e.target.setCustomValidity("")}/>
                             </div>
                         </div>
                         <div className="input-msg-container">
                             <div className="input-group">
                                 <label htmlFor="message" className="label-style">Message</label>
-                                <textarea name="message" id="msg-input" className="input-big-style" placeholder="Leave me a message..." required />
+                                <textarea name="message" id="msg-input" className="input-big-style" placeholder="Leave me a message..." required onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} onInput={(e) => e.target.setCustomValidity("")}/>
                             </div>
                         </div>
                         <div className="button-container">
                             <button type="submit" className="btn-submit-style" disabled={status === 'sending'}>
                                 {status === 'sending' ? 'Sending...' : 'Send message'}
                             </button>
+                            <button onClick={openEmail} className="btn-submit-style">Send via mail program</button>
                         </div>
                         {status === 'success' && (
                             <p style={{color: '#b6e3a8', textAlign: 'center', marginTop: '1rem'}}>

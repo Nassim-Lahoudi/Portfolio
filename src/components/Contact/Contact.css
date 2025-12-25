@@ -6,7 +6,7 @@
 }
 
 .headline-container{
-    margin-top: 4rem;
+    margin-top: 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,10 @@
 .button-container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     margin-top: 2rem;
+    margin-bottom: 4rem;
+    gap: 1rem;
 }
 
 .input-group {
@@ -56,7 +59,7 @@
     width: 27rem;
     height: 3rem;
     color: white;
-    border: none;
+    border-style: grey solid 1px;
     cursor: pointer;
     border-radius: 1rem;
     background-color: black;
