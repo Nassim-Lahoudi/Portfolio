@@ -1,6 +1,6 @@
 /**
  * Contact Page Styles
- * 
+ *
  * Styling specific to the Contact component.
  * Includes form styling, validation states, and button styles.
  * Inherits common styles from Home.css for navigation and footer.
@@ -17,28 +17,30 @@
 
 /* ========== CONTACT HEADER ========== */
 /* Header section with title and subtitle */
+
 .contact-header {
-    margin-top: 2rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-bottom: 4rem;
+    margin-top: 3rem;
 }
 
-/* Contact page title */
 .contact-title {
-    color: #8b8b8b;
-    text-align: center;
-    font-size: 80px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #888;
     margin: 0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
-/* Contact page subtitle */
+.contact-title--highlight {
+    color: #fff;
+}
+
 .contact-subtitle {
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    margin-top: 25px;
+    font-size: 1.1rem;
+    color: #999;
+    margin: 0;
 }
 
 /* Serif font for elegant typography */

@@ -74,7 +74,7 @@ function Home() {
                         <span className="hero-title--highlight serif-font">Software Developer.</span>
                     </h1>
                     <p className="hero-subtitle">
-                        Frankfurt-based aspiring software developer building tomorrow's tech.
+                        Frankfurt-based aspiring state-certified business IT assistant building tomorrow's tech.
                     </p>
                 </section>
 

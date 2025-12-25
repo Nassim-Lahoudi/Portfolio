@@ -1,13 +1,13 @@
 /**
  * Contact Component
- * 
+ *
  * Contact form page with email integration.
- * 
+ *
  * Structure:
  * - Header: Main navigation (shared across pages)
  * - Main: Contact form with EmailJS integration
  * - Footer: Social media links (shared across pages)
- * 
+ *
  * Features:
  * - Contact form with validation
  * - EmailJS integration for sending messages
@@ -85,10 +85,10 @@ function Contact() {
                         {navigationItems.map((item, idx) => (
                             <li className="navigation__item" key={idx}>
                                 <Link to={item.to} className="navigation__link" aria-label={item.alt}>
-                                    <img 
-                                        src={item.img} 
-                                        alt={item.alt} 
-                                        className="navigation__icon" 
+                                    <img
+                                        src={item.img}
+                                        alt={item.alt}
+                                        className="navigation__icon"
                                     />
                                 </Link>
                             </li>
@@ -101,39 +101,43 @@ function Contact() {
             <main className="page-main contact-main">
                 <section className="contact-content">
                     {/* Form header with title and subtitle */}
-                    <div className="contact-header">
-                        <h1 className="contact-title serif-font">Contact me</h1>
-                        <p className="contact-subtitle">Want to work together? Let's connect.</p>
-                    </div>
-
+                    <section className="contact-header">
+                        <h1 className="contact-title serif-font">
+                            Contact <span className="contact-title--highlight">me</span>
+                        </h1>
+                        <p className="contact-subtitle">
+                            Want to work together? Let's connect.
+                        </p>
+                    </section>
+                    
                     {/* Contact form */}
                     <form onSubmit={handleSubmit} className="contact-form">
                         {/* Name fields row */}
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="firstname" className="form-label">First name</label>
-                                <input 
-                                    type="text" 
-                                    name="firstname" 
-                                    id="firstname" 
-                                    className="form-input" 
-                                    placeholder="First name" 
-                                    required 
-                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} 
+                                <input
+                                    type="text"
+                                    name="firstname"
+                                    id="firstname"
+                                    className="form-input"
+                                    placeholder="First name"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")}
                                     onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
 
                             <div className="form-group">
                                 <label htmlFor="lastname" className="form-label">Last name</label>
-                                <input 
-                                    type="text" 
-                                    name="lastname" 
-                                    id="lastname" 
-                                    className="form-input" 
-                                    placeholder="Last name" 
-                                    required 
-                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} 
+                                <input
+                                    type="text"
+                                    name="lastname"
+                                    id="lastname"
+                                    className="form-input"
+                                    placeholder="Last name"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")}
                                     onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
@@ -143,14 +147,14 @@ function Contact() {
                         <div className="form-row">
                             <div className="form-group form-group--full">
                                 <label htmlFor="email" className="form-label">E-Mail</label>
-                                <input 
-                                    type="email" 
-                                    name="email" 
-                                    id="email" 
-                                    className="form-input" 
-                                    placeholder="you@company.com" 
-                                    required 
-                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} 
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    className="form-input"
+                                    placeholder="you@company.com"
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")}
                                     onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
@@ -160,13 +164,13 @@ function Contact() {
                         <div className="form-row">
                             <div className="form-group form-group--full">
                                 <label htmlFor="message" className="form-label">Message</label>
-                                <textarea 
-                                    name="message" 
-                                    id="message" 
-                                    className="form-textarea" 
-                                    placeholder="Leave me a message..." 
-                                    required 
-                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} 
+                                <textarea
+                                    name="message"
+                                    id="message"
+                                    className="form-textarea"
+                                    placeholder="Leave me a message..."
+                                    required
+                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")}
                                     onInput={(e) => e.target.setCustomValidity("")}
                                 />
                             </div>
@@ -174,16 +178,16 @@ function Contact() {
 
                         {/* Submit buttons */}
                         <div className="form-buttons">
-                            <button 
-                                type="submit" 
-                                className="form-button form-button--submit" 
+                            <button
+                                type="submit"
+                                className="form-button form-button--submit"
                                 disabled={status === 'sending'}
                             >
                                 {status === 'sending' ? 'Sending...' : 'Send message'}
                             </button>
-                            <button 
-                                type="button" 
-                                onClick={openEmailClient} 
+                            <button
+                                type="button"
+                                onClick={openEmailClient}
                                 className="form-button form-button--mailto"
                             >
                                 Send via mail program
@@ -211,16 +215,16 @@ function Contact() {
                     <ul className="social-list" role="list">
                         {socialLinks.map((item, idx) => (
                             <li key={idx}>
-                                <a 
-                                    href={item.href} 
-                                    target="_blank" 
+                                <a
+                                    href={item.href}
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="social-link"
                                     aria-label={item.alt}
                                 >
-                                    <img 
-                                        src={item.img} 
-                                        alt={item.alt} 
+                                    <img
+                                        src={item.img}
+                                        alt={item.alt}
                                         className="social-icon"
                                     />
                                 </a>
