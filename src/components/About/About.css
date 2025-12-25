@@ -1,66 +1,118 @@
-.about-main { /* nur About Seite */
+/**
+ * About Page Styles
+ *
+ * Styling specific to the About component.
+ * Inherits common styles from Home.css for navigation and footer.
+ */
+
+/* ========== MAIN CONTENT - ABOUT SPECIFIC ========== */
+/* About page main section with centered content */
+.about-main {
     display: flex;
-    justify-content: center; /* zentriert */
+    justify-content: center;
     align-items: center;
-    gap: 3rem; /* Platz für späteren Text rechts */
+    gap: 3rem;                              /* Space between image and text */
     min-height: 60vh;
 }
 
-.profile-img-container{
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    overflow: hidden;
+/* ========== ABOUT CONTENT SECTION ========== */
+/* Container for profile image and description */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
+    gap: 10rem;                             /* Large gap for visual separation */
+}
+
+/* ========== PROFILE IMAGE ========== */
+/* Circular profile image wrapper */
+.profile-image-wrapper {
+    aspect-ratio: 1 / 1;                    /* Perfect square ratio */
+    border-radius: 50%;                     /* Circular shape */
+    overflow: hidden;                       /* Crop image to circle */
     width: 340px;
     display: flex;
-    /* margin-left: 15rem; */
 }
 
-.profile-img{
+/* Profile image styling */
+.profile-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    /* display: block; */
+    object-fit: cover;                      /* Cover container while maintaining aspect ratio */
+    object-position: top center;            /* Position face at top center */
 }
 
-.profile-text-container{
+/* ========== PROFILE DESCRIPTION ========== */
+/* Text description wrapper */
+.profile-description-wrapper {
     display: flex;
     text-align: center;
     color: white;
 }
 
-.profile-text{
+/* Profile description text */
+.profile-description {
     font-size: 22.5px;
-    line-height: 2;
+    line-height: 2;                         /* Generous line spacing for readability */
 }
 
-.home-main-selection-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20vh;
-    gap: 10rem;
-}
-
+/* ========== GLOBAL DEFAULTS (from Home.css) ========== */
+/* Ensure consistent styling across pages */
 * {
     font-family: Arial, Helvetica, sans-serif;
-    /* color: white; */
     list-style-type: none;
 }
 
-/* @media (max-width: 1500px){
-    .about-main { padding: 2.5rem; gap: 2.5rem; }
-    .profile-img-container { width: 400px; }
-    .profile-text-container { margin-top: 35vh; max-width: 55%; white-space: nowrap;}
+/* ========== RESPONSIVE DESIGN ========== */
+/* Note: Media queries for shared components (header, footer) are in Home.css */
+
+/* Tablet and smaller (max-width: 900px) */
+@media (max-width: 900px) {
+    .about-main {
+        padding: 2.5rem;
+        gap: 2.5rem;
+    }
+
+    .about-content {
+        gap: 5rem;
+        margin-top: 10vh;
+    }
+
+    .profile-image-wrapper {
+        width: 280px;
+    }
+
+    .profile-description {
+        font-size: 20px;
+    }
 }
-@media (max-width: 1200px){
-    .about-main { padding: 2.5rem; gap: 2.5rem; }
-    .profile-img-container { width: 400px; }
-    .profile-text-container { margin-top: 35vh; max-width:55%; white-space: nowrap;}
+
+/* Mobile devices (max-width: 720px) */
+@media (max-width: 720px) {
+    .about-main {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .about-content {
+        flex-direction: column;             /* Stack image and text vertically */
+        align-items: center;
+        gap: 3rem;
+        margin-top: 5vh;
+    }
+
+    .profile-image-wrapper {
+        width: 230px;
+    }
+
+    .profile-description-wrapper {
+        margin-top: 1rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .profile-description {
+        font-size: 18px;
+    }
 }
-@media (max-width: 720px){
-    .about-main { padding: 1.5rem; gap: 1.5rem; }
-    .profile-img-container { width: 230px; }
-    .home-main-selection-section { flex-direction: column; align-items: center; }
-    .profile-text-container { margin-top: 1rem; max-width: 100%; text-align: center; }
-} */

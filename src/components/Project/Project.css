@@ -1,0 +1,27 @@
+/**
+ * Project Page Styles
+ *
+ * Styling specific to the Project component.
+ * Inherits common styles from Home.css for navigation and footer.
+ */
+
+/* ========== PROJECTS SECTION ========== */
+/* Container for project cards/grid */
+.projects-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50vh;
+    padding: 2rem;
+}
+
+/* TODO: Add project card styles here when implementing project showcase */
+/* Example structure:
+.project-card {
+    background: #1a1a1a;
+    border-radius: 1rem;
+    padding: 2rem;
+    ...
+}
+*/

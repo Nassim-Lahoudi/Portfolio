@@ -1,84 +1,85 @@
-/* Home.css
-Styles für die Home-Komponente und deren Unterelemente.
-Ausführliche Kommentare für jeden Abschnitt.
-*/
+/**
+ * Home Page Styles
+ * 
+ * Comprehensive styling for the Home component and all its child elements.
+ * Includes responsive design for mobile and tablet devices.
+ */
 
-/* ---------- Schriftarten ---------- */
-/* Importiert PT Serif von Google Fonts für Überschriften */
+/* ========== FONTS ========== */
+/* Import PT Serif from Google Fonts for elegant headings */
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* ---------- Grundlayout ---------- */
-/* Basis-Layout für die Seite und Body */
-.home-page, html, body {
-    margin: 0; /* Entfernt Standardabstände */
-    user-select: none; /* Verhindert Textauswahl */
-    background-color: #0d0d0d; /* Dunkler Hintergrund für modernen Look */
+/* ========== BASE LAYOUT ========== */
+/* Main page container and global styles */
+.page-container, html, body {
+    margin: 0;                          /* Remove default margins */
+    user-select: none;                  /* Prevent text selection for cleaner UX */
+    background-color: #0d0d0d;          /* Dark background for modern aesthetic */
 }
 
-/* Positionierung: container relative damit absolute Particles korrekt hinter dem Inhalt liegen */
-.home-page {
+/* Position container relative for particle background */
+.page-container {
     position: relative;
 }
 
-/* Header, Main und Footer explizit über Particles platzieren */
-.home-header,
-.home-main,
-.home-footer {
+/* Ensure all main sections appear above particle background */
+.page-header,
+.page-main,
+.page-footer {
     position: relative;
-    z-index: 1;
+    z-index: 1;                         /* Layer above particles (z-index: 0) */
 }
 
-/* ---------- Standard-Schrift und Listenstil ---------- */
-/* Setzt globale Schriftart und entfernt Listenpunkte */
+/* ========== GLOBAL DEFAULTS ========== */
+/* Set default font and remove list markers */
 * {
     font-family: Arial, Helvetica, sans-serif;
-    /* color: white; */
     list-style-type: none;
 }
 
-/* ---------- Header & Navigation ---------- */
-/* Zentriert den Header und fügt Abstand oben hinzu */
-.home-header {
+/* ========== HEADER & NAVIGATION ========== */
+/* Center header with top spacing */
+.page-header {
     display: flex;
     justify-content: center;
     text-align: center;
     margin-top: 25px;
 }
 
-/* Navigation zentriert und volle Breite */
-.navbar {
+/* Navigation container - full width and centered */
+.navigation {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-/* Navigation-Liste mit Schatten und abgerundeten Ecken */
-.navbar-list {
-    box-shadow: 0px 5px 10px 5px #0a0a0a; /* Tiefe durch Schatten */
-    background-color: #151515;
+/* Navigation list with glassmorphism effect */
+.navigation__list {
+    box-shadow: 0px 5px 10px 5px #0a0a0a;   /* Depth shadow */
+    background-color: #151515;               /* Dark semi-transparent background */
     display: flex;
-    gap: 100px; /* Abstand zwischen Icons */
-    border-radius: 100rem;
+    gap: 100px;                              /* Space between navigation items */
+    border-radius: 100rem;                   /* Fully rounded pill shape */
     padding: 35px;
     width: auto;
     justify-content: center;
 }
 
-/* Einzelne Navigationseinträge */
-.navbar-item {
+/* Individual navigation items */
+.navigation__item {
     display: flex;
     align-items: center;
 }
 
-/* Navigation-Icons */
-.navbar-icon {
+/* Navigation icons sizing */
+.navigation__icon {
     height: 25px;
     width: auto;
 }
 
-/* ---------- Hauptinhalt ---------- */
-/* Zentriert den Hauptinhalt vertikal und horizontal */
-.home-main {
+/* ========== MAIN CONTENT ========== */
+/* Vertically and horizontally center main content */
+.page-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,27 +87,26 @@ Ausführliche Kommentare für jeden Abschnitt.
     height: 70vh;
 }
 
-/* ---------- Auswahl-Sektion ---------- */
-/* Zentriert die Auswahl-Buttons */
-.selection-section {
+/* ========== SKILLS SECTION ========== */
+/* Container for skill tags */
+.skills-section {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-/* Liste der Auswahl-Buttons horizontal angeordnet */
-.selection-list {
+/* Horizontal list of skill tags */
+.skills-list {
     padding: 0;
     display: flex;
-    gap: 20px; /* Abstand zwischen Buttons */
+    gap: 20px;                              /* Space between tags */
     justify-content: center;
     align-items: center;
 }
 
-/* Einzelner Auswahl-Button */
-
-.selection-btn{
+/* Individual skill tag button */
+.skill-tag {
     background-color: #171717;
     text-align: center;
     position: relative;
@@ -116,19 +116,21 @@ Ausführliche Kommentare für jeden Abschnitt.
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5rem;
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);            /* Glassmorphism blur effect */
     overflow: hidden;
     box-shadow: 0 0 20px 0 #222, 0 0 0 8px #151515 inset;
     transition: all 0.3s ease;
 }
 
-.selection-btn:hover {
+/* Skill tag hover state */
+.skill-tag:hover {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(255, 255, 255, 0.2);
 }
 
-.selection-btn::before {
+/* Shimmer animation effect on skill tags */
+.skill-tag::before {
     content: "";
     position: absolute;
     top: 0;
@@ -140,43 +142,48 @@ Ausführliche Kommentare für jeden Abschnitt.
     transition: transform 0.7s ease;
 }
 
-.selection-btn:hover::before {
-    transform: translateX(100%);
+.skill-tag:hover::before {
+    transform: translateX(100%);            /* Shimmer moves across on hover */
 }
 
-/* ---------- Intro-Sektion ---------- */
-/* Zentriert die Intro-Texte */
-.intro-section {
+/* ========== HERO SECTION ========== */
+/* Center hero content */
+.hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Hauptüberschrift */
-.intro-title {
+/* Main hero title */
+.hero-title {
     color: #8b8b8b;
     text-align: center;
     font-size: 80px;
     margin: 0;
 }
 
-/* Untertitel */
-.intro-subtitle {
+/* Highlighted part of hero title (white text) */
+.hero-title--highlight {
+    color: white;
+}
+
+/* Hero subtitle/tagline */
+.hero-subtitle {
     color: #525252;
     text-align: center;
     font-size: 25px;
     margin-top: 25px;
 }
 
-/* Serif-Schrift für Überschriften */
+/* Serif font class for elegant typography */
 .serif-font {
     font-family: "PT Serif", serif;
 }
 
-/* ---------- Aktions-Sektion ---------- */
-/* Zentriert die Aktions-Buttons und fügt Abstand hinzu */
-.action-section {
+/* ========== CTA (Call-to-Action) SECTION ========== */
+/* Center CTA buttons with spacing */
+.cta-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,134 +191,124 @@ Ausführliche Kommentare für jeden Abschnitt.
     margin: 0;
 }
 
-/* Primärer Button mit Farbverlauf und Schatten */
-.primary-btn {
+/* Base button styles */
+.button {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     align-content: center;
     font-size: 18px;
-    background: linear-gradient(90deg, #cde8bf 0%, #b6e3a8 100%);
     border-radius: 2rem;
     border: none;
-    color: #0d0d0d;
     width: 185px;
     height: 75px;
     font-weight: bold;
     transition: box-shadow 0.2s, transform 0.2s;
-    box-shadow: 0 4px 24px 0 #b6e3a880;
     text-decoration: none;
 }
 
-/* Sekundärer Button mit dunklem Farbverlauf */
-.secondary-btn {
-    text-decoration: none;
-    text-align: center;
-    align-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+/* Primary button with green gradient */
+.button--primary {
+    background: linear-gradient(90deg, #cde8bf 0%, #b6e3a8 100%);
+    color: #0d0d0d;
+    box-shadow: 0 4px 24px 0 #b6e3a880;
+}
+
+/* Secondary button with dark gradient */
+.button--secondary {
     background: linear-gradient(90deg, #232323 0%, #1f1f1f 100%);
-    border-radius: 2rem;
-    border: none;
     color: #fff;
-    width: 185px;
-    height: 75px;
-    font-weight: bold;
-    transition: box-shadow 0.2s, transform 0.2s;
     box-shadow: 0 4px 24px 0 #23232380;
 }
 
-/* Hover-Effekt für Buttons: Schatten und leichte Vergrößerung */
-.btn-style:hover {
+/* Button hover effect: glow and lift */
+.button:hover {
     cursor: pointer;
     box-shadow: 0px 0px 20px 0px #b6e3a8, 0px 0px 10px 0px #232323;
     transform: translateY(-3px) scale(1.04);
     text-decoration: none;
 }
 
-/* ---------- Footer ---------- */
-/* Zentriert die Footer-Sektion */
-.footer-selection-section {
+/* ========== FOOTER & SOCIAL MEDIA ========== */
+/* Center footer content */
+.social-section {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Social Media Icons horizontal anordnen */
-.footer-selection-list {
+/* Horizontal list of social icons */
+.social-list {
     flex-direction: row;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
-    gap: 30px;
+    gap: 30px;                              /* Space between social icons */
 }
 
-/* Social Media Icons: Größe und Animation für Hover */
-.footer-navbar-icon {
+/* Social media icon sizing */
+.social-icon {
     width: auto;
     height: 50px;
-    transition: transform 0.2s, box-shadow 0.2s; /* Animation für Hover */
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Hover-Effekt für Social-Media-Icons im Footer:
-   - Vergrößert das Icon
-   - Fügt einen grünen und dunklen Schatten hinzu
-   - Zeigt einen Pointer-Cursor */
-.footer-navbar-icon:hover {
+/* Social icon hover effect: scale and glow */
+.social-icon:hover {
     transform: scale(1.15);
     box-shadow: 0 0 18px 0 #b6e3a8, 0 0 8px 0 #232323;
     cursor: pointer;
 }
 
-/* ---------- Responsive Design: Handy & Tablet ---------- */
-/* Für Geräte mit maximal 900px Breite (Tablet und kleiner) */
+/* ========== RESPONSIVE DESIGN ========== */
+/* Tablet and smaller devices (max-width: 900px) */
 @media (max-width: 900px) {
-    .home-header {
+    .page-header {
         margin-top: 15px;
     }
 
-    .navbar-list {
-        gap: 40px; /* Weniger Abstand zwischen Icons */
+    .navigation__list {
+        gap: 40px;                          /* Reduced spacing */
         padding: 20px;
         font-size: 16px;
     }
 
-    .navbar-icon {
+    .navigation__icon {
         height: 26px;
     }
 
-    .home-main {
+    .page-main {
         height: auto;
         padding: 30px 10px;
     }
 
-    .intro-title {
+    .hero-title {
         font-size: 48px;
     }
 
-    .intro-subtitle {
+    .hero-subtitle {
         font-size: 20px;
         margin-top: 15px;
     }
 
-    .selection-list {
+    .skills-list {
         gap: 10px;
-        flex-wrap: wrap; /* Buttons umbrechen bei wenig Platz */
+        flex-wrap: wrap;                    /* Wrap tags on smaller screens */
     }
 
-    .selection-btn {
+    .skill-tag {
         padding: 10px;
         font-size: 15px;
     }
 
-    .action-section {
+    .cta-section {
         gap: 10px;
-        flex-direction: column; /* Buttons untereinander */
+        flex-direction: column;             /* Stack buttons vertically */
         align-items: stretch;
     }
 
-    .primary-btn,
-    .secondary-btn {
+    .button--primary,
+    .button--secondary {
         width: 100%;
         min-width: 140px;
         height: 60px;
@@ -319,48 +316,48 @@ Ausführliche Kommentare für jeden Abschnitt.
         margin-bottom: 10px;
     }
 
-    .footer-selection-list {
+    .social-list {
         gap: 18px;
     }
 
-    .footer-navbar-icon {
+    .social-icon {
         height: 36px;
     }
 }
 
-/* Für Geräte mit maximal 600px Breite (Smartphone) */
+/* Mobile devices (max-width: 600px) */
 @media (max-width: 600px) {
-    .navbar-list {
+    .navigation__list {
         gap: 20px;
         padding: 10px;
         font-size: 14px;
     }
 
-    .navbar-icon {
+    .navigation__icon {
         height: 22px;
     }
 
-    .intro-title {
+    .hero-title {
         font-size: 32px;
     }
 
-    .intro-subtitle {
+    .hero-subtitle {
         font-size: 15px;
     }
 
-    .selection-btn {
+    .skill-tag {
         font-size: 13px;
         padding: 8px;
     }
 
-    .primary-btn,
-    .secondary-btn {
+    .button--primary,
+    .button--secondary {
         height: 48px;
         font-size: 14px;
         min-width: 100px;
     }
 
-    .footer-navbar-icon {
+    .social-icon {
         height: 28px;
     }
 }

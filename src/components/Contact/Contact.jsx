@@ -1,29 +1,62 @@
-// Home.jsx
-// Diese Komponente bildet die Startseite des Portfolios ab.
-// Sie enthält Navigation, Auswahlmöglichkeiten, ein Intro und einen Footer mit Social Links.
+/**
+ * Contact Component
+ * 
+ * Contact form page with email integration.
+ * 
+ * Structure:
+ * - Header: Main navigation (shared across pages)
+ * - Main: Contact form with EmailJS integration
+ * - Footer: Social media links (shared across pages)
+ * 
+ * Features:
+ * - Contact form with validation
+ * - EmailJS integration for sending messages
+ * - Alternative mailto link for direct email
+ * - Form submission status feedback
+ */
 
-import { Link } from "react-router-dom"; // Ermöglicht das Routing zwischen Seiten
-import { useState } from "react"; // Für Zustandsverwaltung
-import emailjs from '@emailjs/browser'; // EmailJS für E-Mail-Versand
-import './Contact.css'; // Bindet die zugehörigen CSS-Styles ein
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import './Contact.css';
 
 function Contact() {
-    const [status, setStatus] = useState(''); // Status: '', 'sending', 'success', 'error'
+    // Form submission status: '', 'sending', 'success', 'error'
+    const [status, setStatus] = useState('');
 
+    // Navigation menu items configuration
+    const navigationItems = [
+        { to: "/", img: "src/assets/home-symbol.png", alt: "Home" },
+        { to: "/Project", img: "src/assets/code-termial-symbol.png", alt: "Code Terminal" },
+        { to: "/About", img: "src/assets/aboutme-symbol.png", alt: "About Me" },
+        { to: "/Contact", img: "src/assets/email-symbol.png", alt: "Email" }
+    ];
+
+    // Social media links configuration
+    const socialLinks = [
+        { href: "https://github.com/Nassim-Lahoudi", img: "src/assets/github-symbol.png", alt: "GitHub" },
+        { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: "src/assets/linkedin-symbol.png", alt: "LinkedIn" },
+        { href: "https://dev.to/nassim-lahoudi", img: "src/assets/dev-symbol.png", alt: "Dev.to" }
+    ];
+
+    /**
+     * Handle form submission via EmailJS
+     * @param {Event} e - Form submit event
+     */
     const handleSubmit = (e) => {
         e.preventDefault();
         setStatus('sending');
 
-        // EmailJS konfigurieren - Diese Werte musst du durch deine eigenen ersetzen
-        const serviceID = 'SMTP_Service_ID'; // Von EmailJS Dashboard
-        const templateID = 'Email_Template_ID'; // Von EmailJS Dashboard
-        const publicKey = 'XhyzJ5vx7FMCvOLWs'; // Von EmailJS Dashboard
+        // EmailJS configuration - Replace with your own values from EmailJS dashboard
+        const serviceID = 'SMTP_Service_ID';        // Your service ID
+        const templateID = 'Email_Template_ID';      // Your template ID
+        const publicKey = 'XhyzJ5vx7FMCvOLWs';       // Your public key
 
         emailjs.sendForm(serviceID, templateID, e.target, publicKey)
             .then(() => {
                 setStatus('success');
-                e.target.reset(); // Formular zurücksetzen
-                setTimeout(() => setStatus(''), 5000); // Status nach 5 Sek. zurücksetzen
+                e.target.reset();                     // Clear form after successful send
+                setTimeout(() => setStatus(''), 5000); // Reset status after 5 seconds
             })
             .catch((error) => {
                 console.error('EmailJS Error:', error);
@@ -32,7 +65,10 @@ function Contact() {
             });
     };
 
-    const openEmail = () => {
+    /**
+     * Open default email client with pre-filled subject and body
+     */
+    const openEmailClient = () => {
         const email = "info@nassim-lahoudi.de";
         const subject = "Hello from my portfolio";
         const body = "Hi, I would like to get in touch.";
@@ -41,22 +77,19 @@ function Contact() {
     };
 
     return (
-        <div className="home-page">
-            {/* ---------- Header mit Navigation ---------- */}
-            <header className="home-header">
-                <nav className="navbar">
-                    <ul className="navbar-list">
-                        {/* Navigation: Jede Seite als Icon-Link */}
-                        {[
-                            { to: "/", img: "src/assets/home-symbol.png", alt: "Home" },
-                            { to: "/Project", img: "src/assets/code-termial-symbol.png", alt: "Code Terminal" },
-                            { to: "/About", img: "src/assets/aboutme-symbol.png", alt: "About Me" },
-                            { to: "/Contact", img: "src/assets/email-symbol.png", alt: "Email" }
-                        ].map((item, idx) => (
-                            <li className="navbar-item" key={idx}>
-                                {/* Link zu jeweiliger Route mit Icon */}
-                                <Link to={item.to}>
-                                    <img src={item.img} alt={item.alt} className="navbar-icon" />
+        <div className="page-container">
+            {/* ========== HEADER: Navigation Bar ========== */}
+            <header className="page-header">
+                <nav className="navigation" role="navigation" aria-label="Main navigation">
+                    <ul className="navigation__list">
+                        {navigationItems.map((item, idx) => (
+                            <li className="navigation__item" key={idx}>
+                                <Link to={item.to} className="navigation__link" aria-label={item.alt}>
+                                    <img 
+                                        src={item.img} 
+                                        alt={item.alt} 
+                                        className="navigation__icon" 
+                                    />
                                 </Link>
                             </li>
                         ))}
@@ -64,51 +97,107 @@ function Contact() {
                 </nav>
             </header>
 
-            {/* ---------- Hauptinhalt ---------- */}
-            <main className="home-main contact-main">
-                {/* Auswahl-Sektion: Zeigt verschiedene Schwerpunkte als Buttons */}
-                <section className="contact-main-selection-section">
-                    <div className="headline-container">
-                        <h1 className="intro-title serif-font">Contact me</h1>
-                        <p className="intro-subtitle" id="intro-subtitle-white" >Want to work together? Let’s connect.</p>
+            {/* ========== MAIN: Contact Form ========== */}
+            <main className="page-main contact-main">
+                <section className="contact-content">
+                    {/* Form header with title and subtitle */}
+                    <div className="contact-header">
+                        <h1 className="contact-title serif-font">Contact me</h1>
+                        <p className="contact-subtitle">Want to work together? Let's connect.</p>
                     </div>
-                    <form onSubmit={handleSubmit} className="input-container">
-                        <div className="input-name-container">
-                            <div className="input-group">
-                                <label htmlFor="firstname" className="label-style">First name</label>
-                                <input type="text" name="firstname" id="firstname-input" className="input-normale-style" placeholder="First name" required onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} onInput={(e) => e.target.setCustomValidity("")}/>
+
+                    {/* Contact form */}
+                    <form onSubmit={handleSubmit} className="contact-form">
+                        {/* Name fields row */}
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label htmlFor="firstname" className="form-label">First name</label>
+                                <input 
+                                    type="text" 
+                                    name="firstname" 
+                                    id="firstname" 
+                                    className="form-input" 
+                                    placeholder="First name" 
+                                    required 
+                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} 
+                                    onInput={(e) => e.target.setCustomValidity("")}
+                                />
                             </div>
 
-                            <div className="input-group">
-                                <label htmlFor="lastname" className="label-style">Last name</label>
-                                <input type="text" name="lastname" id="lastname-input" className="input-normale-style" placeholder="Last name" required onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} onInput={(e) => e.target.setCustomValidity("")}/>
+                            <div className="form-group">
+                                <label htmlFor="lastname" className="form-label">Last name</label>
+                                <input 
+                                    type="text" 
+                                    name="lastname" 
+                                    id="lastname" 
+                                    className="form-input" 
+                                    placeholder="Last name" 
+                                    required 
+                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} 
+                                    onInput={(e) => e.target.setCustomValidity("")}
+                                />
                             </div>
                         </div>
-                        <div className="input-email-container">
-                            <div className="input-group">
-                                <label htmlFor="email" className="label-style">E-Mail</label>
-                                <input type="email" name="email" id="email-input" className="input-normale-style" placeholder="you@company.com" required onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} onInput={(e) => e.target.setCustomValidity("")}/>
+
+                        {/* Email field row */}
+                        <div className="form-row">
+                            <div className="form-group form-group--full">
+                                <label htmlFor="email" className="form-label">E-Mail</label>
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    className="form-input" 
+                                    placeholder="you@company.com" 
+                                    required 
+                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} 
+                                    onInput={(e) => e.target.setCustomValidity("")}
+                                />
                             </div>
                         </div>
-                        <div className="input-msg-container">
-                            <div className="input-group">
-                                <label htmlFor="message" className="label-style">Message</label>
-                                <textarea name="message" id="msg-input" className="input-big-style" placeholder="Leave me a message..." required onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} onInput={(e) => e.target.setCustomValidity("")}/>
+
+                        {/* Message field row */}
+                        <div className="form-row">
+                            <div className="form-group form-group--full">
+                                <label htmlFor="message" className="form-label">Message</label>
+                                <textarea 
+                                    name="message" 
+                                    id="message" 
+                                    className="form-textarea" 
+                                    placeholder="Leave me a message..." 
+                                    required 
+                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")} 
+                                    onInput={(e) => e.target.setCustomValidity("")}
+                                />
                             </div>
                         </div>
-                        <div className="button-container">
-                            <button type="submit" className="btn-submit-style" disabled={status === 'sending'}>
+
+                        {/* Submit buttons */}
+                        <div className="form-buttons">
+                            <button 
+                                type="submit" 
+                                className="form-button form-button--submit" 
+                                disabled={status === 'sending'}
+                            >
                                 {status === 'sending' ? 'Sending...' : 'Send message'}
                             </button>
-                            <button onClick={openEmail} className="btn-submit-style">Send via mail program</button>
+                            <button 
+                                type="button" 
+                                onClick={openEmailClient} 
+                                className="form-button form-button--mailto"
+                            >
+                                Send via mail program
+                            </button>
                         </div>
+
+                        {/* Status messages */}
                         {status === 'success' && (
-                            <p style={{color: '#b6e3a8', textAlign: 'center', marginTop: '1rem'}}>
+                            <p className="status-message status-message--success">
                                 ✓ Message sent successfully!
                             </p>
                         )}
                         {status === 'error' && (
-                            <p style={{color: '#ff6b6b', textAlign: 'center', marginTop: '1rem'}}>
+                            <p className="status-message status-message--error">
                                 ✗ Failed to send. Please try again.
                             </p>
                         )}
@@ -116,21 +205,24 @@ function Contact() {
                 </section>
             </main>
 
-            {/* ---------- Footer mit Social Media Links ---------- */}
-            <footer className="home-footer">
-                <section className="footer-selection-section">
-                    <ul className="footer-selection-list">
-                        {/* Social Media Links als Icons */}
-                        {[
-                            { href: "https://github.com/Nassim-Lahoudi", img: "src/assets/github-symbol.png", alt: "GitHub" },
-                            { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: "src/assets/linkedin-symbol.png", alt: "LinkedIn" },
-                            { href: "https://dev.to/nassim-lahoudi", img: "src/assets/dev-symbol.png", alt: "Dev.to" }
-                        ].map((item, idx) => (
+            {/* ========== FOOTER: Social Media Links ========== */}
+            <footer className="page-footer">
+                <section className="social-section">
+                    <ul className="social-list" role="list">
+                        {socialLinks.map((item, idx) => (
                             <li key={idx}>
-                                {/* Externer Link mit Sicherheitsattributen */}
-                                <a href={item.href} target="_blank" rel="noopener noreferrer">
-                                    {/* Icon mit Hover-Effekt (siehe CSS) */}
-                                    <img src={item.img} alt={item.alt} className="footer-navbar-icon"/>
+                                <a 
+                                    href={item.href} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="social-link"
+                                    aria-label={item.alt}
+                                >
+                                    <img 
+                                        src={item.img} 
+                                        alt={item.alt} 
+                                        className="social-icon"
+                                    />
                                 </a>
                             </li>
                         ))}
@@ -141,4 +233,4 @@ function Contact() {
     );
 }
 
-export default Contact; // Exportiert die Komponente für die Verwendung in anderen Komponenten
+export default Contact;
