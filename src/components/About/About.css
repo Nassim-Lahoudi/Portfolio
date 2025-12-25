@@ -1,0 +1,352 @@
+/**
+ * About Page Styles
+ *
+ * Comprehensive styling for the About component with profile, skills, and timeline.
+ * Inherits common styles from Home.css for navigation and footer.
+ */
+
+/* ========== FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ========== MAIN CONTENT ========== */
+.about-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+    margin-top: 40rem;
+    margin-bottom: 40rem;
+}
+
+/* ========== PROFILE HERO SECTION ========== */
+.about-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.profile-image-wrapper {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(182, 227, 168, 0.3);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+}
+
+.profile-title {
+    font-size: 1.2rem;
+    color: #b6e3a8;
+    margin: 0;
+    font-weight: 500;
+}
+
+.profile-location {
+    font-size: 1rem;
+    color: #999;
+    margin: 0;
+}
+
+/* ========== SECTION TITLES ========== */
+.section-title {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 0 2rem 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* ========== ABOUT DESCRIPTION ========== */
+.about-description {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: #bbb;
+    line-height: 1.8;
+    margin: 0 0 1.5rem 0;
+}
+
+/* ========== SKILLS SHOWCASE ========== */
+.skills-showcase {
+    width: 100%;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.category-title {
+    font-size: 1.3rem;
+    color: #b6e3a8;
+    margin: 0 0 1.5rem 0;
+    font-weight: 600;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ddd;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    background: rgba(182, 227, 168, 0.1);
+    border-color: rgba(182, 227, 168, 0.3);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ========== EXPERIENCE TIMELINE ========== */
+.experience-timeline {
+    width: 100%;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(182, 227, 168, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background: #b6e3a8;
+    border-radius: 50%;
+    border: 3px solid #0d0d0d;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(182, 227, 168, 0.5);
+}
+
+.timeline-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #151515 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    width: 45%;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(182, 227, 168, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-year {
+    display: inline-block;
+    background: rgba(182, 227, 168, 0.1);
+    color: #b6e3a8;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-title {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.timeline-subtitle {
+    font-size: 1rem;
+    color: #999;
+    margin: 0.5rem 0;
+}
+
+.timeline-description {
+    font-size: 0.95rem;
+    color: #bbb;
+    line-height: 1.6;
+    margin: 0.75rem 0 0 0;
+}
+
+/* ========== GLOBAL DEFAULTS ========== */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style-type: none;
+}
+
+.serif-font {
+    font-family: 'PT Serif', serif;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet (max-width: 900px) */
+@media (max-width: 900px) {
+    .about-main {
+        padding: 2rem 1.5rem 4rem 1.5rem;
+        gap: 3rem;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-marker {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+    .about-main {
+        padding: 1.5rem 1rem 3rem 1rem;
+        gap: 2.5rem;
+    }
+
+    .about-hero {
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .profile-image-wrapper {
+        width: 150px;
+    }
+
+    .profile-name {
+        font-size: 1.75rem;
+    }
+
+    .profile-title {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+}

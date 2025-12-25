@@ -1,5 +1,12 @@
-body, html{
-    user-select: none;
-    margin: 0;
-    background-color: black;
+/**
+ * Global Styles
+ *
+ * Base styles applied to the entire application.
+ * These styles ensure consistent appearance across all pages.
+ */
+
+body, html {
+    user-select: none;        /* Prevent text selection for cleaner UI */
+    margin: 0;                /* Remove default browser margins */
+    background-color: black;  /* Dark background for modern aesthetic */
 }
