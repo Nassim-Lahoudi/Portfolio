@@ -1,6 +1,6 @@
 /**
  * Home Page Styles
- * 
+ *
  * Comprehensive styling for the Home component and all its child elements.
  * Includes responsive design for mobile and tablet devices.
  */
@@ -58,7 +58,7 @@
     box-shadow: 0px 5px 10px 5px #0a0a0a;   /* Depth shadow */
     background-color: #151515;               /* Dark semi-transparent background */
     display: flex;
-    gap: 100px;                              /* Space between navigation items */
+    gap: 80px;                              /* Space between navigation items */
     border-radius: 100rem;                   /* Fully rounded pill shape */
     padding: 35px;
     width: auto;
@@ -69,6 +69,7 @@
 .navigation__item {
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 
 /* Navigation icons sizing */
@@ -268,8 +269,8 @@
     }
 
     .navigation__list {
-        gap: 40px;                          /* Reduced spacing */
-        padding: 20px;
+        gap: 50px;                          /* Reduced spacing */
+        padding: 30px;
         font-size: 16px;
     }
 
@@ -328,8 +329,8 @@
 /* Mobile devices (max-width: 600px) */
 @media (max-width: 600px) {
     .navigation__list {
-        gap: 20px;
-        padding: 10px;
+        gap: 30px;
+        padding: 20px;
         font-size: 14px;
     }
 
@@ -355,6 +356,7 @@
         height: 48px;
         font-size: 14px;
         min-width: 100px;
+        padding: 0.2rem;
     }
 
     .social-icon {
