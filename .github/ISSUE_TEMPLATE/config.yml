@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Ask a Question
+    url: https://github.com/Nassim-Lahoudi/Portfolio/discussions
+    about: Ask questions and discuss with other community members
+  - name: 🔒 Security Vulnerability
+    url: https://github.com/Nassim-Lahoudi/Portfolio/security/advisories/new
+    about: Report a security vulnerability privately
+  - name: 📧 Email Contact
+    url: mailto:info@nassim-lahoudi.de
+    about: Contact me directly via email

@@ -1,0 +1,87 @@
+name: 💡 Feature Request
+description: Suggest an idea for this project
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+assignees:
+  - Nassim-Lahoudi
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please fill out this form to help us understand your idea.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm before submitting a feature request
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: This feature does not exist yet
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: Is your feature request related to a problem? Please describe.
+      placeholder: I'm always frustrated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like
+      placeholder: I would like to see...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Describe any alternative solutions or features you've considered
+      placeholder: Another way to solve this could be...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, mockups, or screenshots about the feature request here
+      placeholder: Any additional information that might be relevant
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - High - I need this feature to use the site
+        - Medium - This would significantly improve my experience
+        - Low - Nice to have, but not critical
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: pages-affected
+    attributes:
+      label: Affected Pages
+      description: Which pages would this feature affect?
+      options:
+        - label: Home
+        - label: Projects
+        - label: About
+        - label: Contact
+        - label: All pages
+        - label: New page
+
+  - type: checkboxes
+    id: willing-to-help
+    attributes:
+      label: Contribution
+      description: Are you willing to help implement this feature?
+      options:
+        - label: I am willing to submit a pull request for this feature
