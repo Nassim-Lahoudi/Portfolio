@@ -26,17 +26,18 @@ function Contact() {
 
     // Navigation menu items configuration
     const navigationItems = [
-        { to: "/", img: "src/assets/home-symbol.png", alt: "Home" },
-        { to: "/Project", img: "src/assets/code-termial-symbol.png", alt: "Code Terminal" },
-        { to: "/About", img: "src/assets/aboutme-symbol.png", alt: "About Me" },
-        { to: "/Contact", img: "src/assets/email-symbol.png", alt: "Email" }
+        { to: "/", img: "/icons/home-symbol.png", alt: "Home" },
+        { to: "/Project", img: "/icons/code-termial-symbol.png", alt: "Projects" },
+        { to: "/About", img: "/icons/aboutme-symbol.png", alt: "About Me" },
+        { to: "/Contact", img: "/icons/email-symbol.png", alt: "Contact Me" }
     ];
+
 
     // Social media links configuration
     const socialLinks = [
-        { href: "https://github.com/Nassim-Lahoudi", img: "src/assets/github-symbol.png", alt: "GitHub" },
-        { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: "src/assets/linkedin-symbol.png", alt: "LinkedIn" },
-        { href: "https://dev.to/nassim-lahoudi", img: "src/assets/dev-symbol.png", alt: "Dev.to" }
+        { href: "https://github.com/Nassim-Lahoudi", img: "/icons/github-symbol.png", alt: "GitHub" },
+        { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: "/icons/linkedin-symbol.png", alt: "LinkedIn" },
+        { href: "https://dev.to/nassim-lahoudi", img: "/icons/dev-symbol.png", alt: "Dev.to" }
     ];
 
     /**
@@ -109,7 +110,7 @@ function Contact() {
                             Want to work together? Let's connect.
                         </p>
                     </section>
-                    
+
                     {/* Contact form */}
                     <form onSubmit={handleSubmit} className="contact-form">
                         {/* Name fields row */}
