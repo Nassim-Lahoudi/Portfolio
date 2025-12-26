@@ -37,17 +37,26 @@
 1. Im Dashboard: Klicke auf "Account" → "General"
 2. Finde deinen **Public Key** (z.B. "AbC123dEf456")
 
-## Schritt 5: Werte in Contact.jsx eintragen
-Öffne `/workspaces/Portfolio/src/components/Contact/Contact.jsx` und ersetze:
+## Schritt 5: Umgebungsvariablen konfigurieren
 
-```javascript
-const serviceID = 'YOUR_SERVICE_ID';      // → Deine Service ID
-const templateID = 'YOUR_TEMPLATE_ID';    // → Deine Template ID
-const publicKey = 'YOUR_PUBLIC_KEY';      // → Dein Public Key
-```
+### Variante A: Lokale Entwicklung
+1. Öffne die `.env` Datei im Projektroot
+2. Ersetze die Platzhalter mit deinen echten Werten:
+   ```env
+   VITE_EMAILJS_SERVICE_ID=deine_service_id
+   VITE_EMAILJS_TEMPLATE_ID=deine_template_id
+   VITE_EMAILJS_PUBLIC_KEY=dein_public_key
+   ```
+3. Speichere die Datei
+4. Starte den Dev-Server neu: `npm run dev`
 
-Beispiel:
-```javascript
+### Variante B: Production/GitHub Pages
+Wenn du auf GitHub Pages oder einem anderen Hosting-Service deployst:
+1. Füge die Umgebungsvariablen in deinen GitHub Secrets hinzu
+2. Oder konfiguriere sie in den Einstellungen deines Hosting-Providers
+3. Stelle sicher, dass die Variablen mit `VITE_` beginnen
+
+**Wichtig:** Die `.env` Datei ist in `.gitignore` und wird NICHT zu GitHub gepusht. Das schützt deine API-Schlüssel!
 const serviceID = 'service_abc123';
 const templateID = 'template_xyz789';
 const publicKey = 'AbC123dEf456';

@@ -48,10 +48,10 @@ function Contact() {
         e.preventDefault();
         setStatus('sending');
 
-        // EmailJS configuration - Replace with your own values from EmailJS dashboard
-        const serviceID = 'SMTP_Service_ID';        // Your service ID
-        const templateID = 'Email_Template_ID';      // Your template ID
-        const publicKey = 'XhyzJ5vx7FMCvOLWs';       // Your public key
+        // EmailJS configuration - Values loaded from environment variables
+        const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
         emailjs.sendForm(serviceID, templateID, e.target, publicKey)
             .then(() => {
