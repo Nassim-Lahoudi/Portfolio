@@ -31,12 +31,20 @@ function Project() {
     // Project portfolio data
     const projects = [
         {
+            title: "Windows Configuration Tool",
+            description: "A terminal‑based automation tool for configuring and optimizing Windows systems. It applies system tweaks, removes unwanted printers, manages startup apps, installs selected software, and performs maintenance tasks with clear success indicators for each action. ",
+            technologies: ["Python", "Tkinter"],
+            github: "https://github.com/Nassim-Lahoudi/Windows-Configuration-Tool",
+            live: null,
+            featured: true
+        },
+        {
             title: "Lanis Management Tool",
             description: "Desktop application for managing Schulportal Hessen data via the LanisAPI. Features secure login, task management, and substitution plans for digitally organizing school life.",
             technologies: ["Python", "LanisAPI", "Tkinter"],
             github: "https://github.com/Nassim-Lahoudi/Lanis-Management-Tool",
             live: null,
-            featured: true
+            featured: false
         },
         {
             title: "Maintenance Page",
@@ -44,7 +52,7 @@ function Project() {
             technologies: ["React", "Vite", "JavaScript"],
             github: "https://github.com/Nassim-Lahoudi/Maintenance-Page",
             live: null,
-            featured: true
+            featured: false
         },
         {
             title: "GlassPortfolio",
@@ -77,7 +85,7 @@ function Project() {
             github: "https://github.com/Nassim-Lahoudi/Bestellungsaufnahme-Programm",
             live: null,
             featured: false
-        }
+        },
     ];
 
     return (

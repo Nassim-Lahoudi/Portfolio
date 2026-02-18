@@ -274,8 +274,10 @@
 /* Tablet (max-width: 900px) */
 @media (max-width: 900px) {
     .about-main {
-        padding: 2rem 1.5rem 4rem 1.5rem;
-        gap: 3rem;
+        padding: 1.5rem 1rem 3rem 1rem;
+        gap: 2.5rem;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .profile-name {
