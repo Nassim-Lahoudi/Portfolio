@@ -28,7 +28,6 @@
 - **Frontend:** React 18.3, React Router 7.1
 - **Build Tool:** Vite 6.0
 - **Styling:** Pure CSS with modern features
-- **Animations:** @tsparticles/react (slim engine)
 - **Forms:** EmailJS for contact form
 - **Dev Tools:** ESLint for code quality
 
