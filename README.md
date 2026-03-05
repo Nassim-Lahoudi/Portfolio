@@ -56,9 +56,6 @@ Portfolio/
 │       ├── Contact/
 │       │   ├── Contact.jsx         # Contact form component
 │       │   └── Contact.css         # Contact form styles
-│       └── Particles/
-│           ├── Particles.jsx       # Particle background component
-│           └── Particles.css       # Particle wrapper styles
 ├── public/                         # Static assets
 ├── index.html                      # HTML entry point
 ├── vite.config.js                  # Vite configuration
@@ -192,18 +189,6 @@ Main color scheme is defined in CSS:
 - Dark background: `#0d0d0d` / `#151515`
 - Text colors: `#ffffff` / `#8b8b8b` / `#525252`
 
-### Particle Effects
-
-Adjust particles in `src/components/Particles/Particles.jsx`:
-```javascript
-particles: {
-  number: { value: 40 },      // Particle count
-  opacity: { value: 0.15 },   // Transparency
-  size: { min: 1, max: 4 },   // Size range
-  // ... more options
-}
-```
-
 ### Responsive Breakpoints
 
 - Mobile: `max-width: 600px`
@@ -241,7 +226,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [tsparticles](https://particles.js.org/) - Particle animation library
 - [EmailJS](https://www.emailjs.com/) - Email service integration
 - [React Router](https://reactrouter.com/) - Client-side routing
 - [Vite](https://vitejs.dev/) - Build tool and dev server
