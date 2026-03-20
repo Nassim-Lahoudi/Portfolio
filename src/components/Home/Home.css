@@ -19,6 +19,9 @@
 
 .page-container {
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Ensure all main sections appear above particle background */
@@ -26,7 +29,6 @@
 .page-main,
 .page-footer {
     position: relative;
-    z-index: 0;
 }
 
 /* ========== GLOBAL DEFAULTS ========== */
@@ -84,7 +86,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    flex: 1;
+    min-height: 0;
 }
 
 /* ========== SKILLS SECTION ========== */
@@ -234,6 +237,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.page-footer {
+    margin-top: auto;
+    padding-bottom: 16px;
 }
 
 /* Horizontal list of social icons */
