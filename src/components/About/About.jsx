@@ -47,23 +47,17 @@ function About() {
     // Experience/Education timeline
     const timeline = [
         {
-            year: "2026",
+            year: "08/2024 - 06/2026",
             title: "State-Certified Business IT Assistant",
             subtitle: "Information Processing & Business",
             description: "Currently in vocational training – Expected completion in 2026"
         },
         {
-            year: "2024",
+            year: "06/2024",
             title: "Secondary School Certificate",
             subtitle: "Successfully completed",
             description: "Secondary school certificate (intermediate level) with a strong general education foundation."
         },
-        {
-            year: "Current",
-            title: "Continuous Learning",
-            subtitle: "Tech Enthusiast",
-            description: "Constant growth through personal projects and exploring new technologies"
-        }
     ];
 
     return (

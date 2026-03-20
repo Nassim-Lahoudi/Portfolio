@@ -11,7 +11,6 @@
 
 import { Link } from "react-router-dom";
 import './Home.css';
-import ParticlesBackground from '../Particles/Particles';
 
 function Home() {
     // Navigation menu items configuration
@@ -31,9 +30,6 @@ function Home() {
 
     return (
         <div className="page-container">
-            {/* Animated particle background */}
-            <ParticlesBackground />
-
             {/* ========== HEADER: Navigation Bar ========== */}
             <header className="page-header">
                 <nav className="navigation" role="navigation" aria-label="Main navigation">

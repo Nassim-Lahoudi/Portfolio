@@ -17,9 +17,11 @@
     background-color: #0d0d0d;          /* Dark background for modern aesthetic */
 }
 
-/* Position container relative for particle background */
 .page-container {
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Ensure all main sections appear above particle background */
@@ -27,7 +29,6 @@
 .page-main,
 .page-footer {
     position: relative;
-    z-index: 1;                         /* Layer above particles (z-index: 0) */
 }
 
 /* ========== GLOBAL DEFAULTS ========== */
@@ -85,7 +86,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    flex: 1;
+    min-height: 0;
 }
 
 /* ========== SKILLS SECTION ========== */
@@ -237,6 +239,11 @@
     align-items: center;
 }
 
+.page-footer {
+    margin-top: auto;
+    padding-bottom: 16px;
+}
+
 /* Horizontal list of social icons */
 .social-list {
     flex-direction: row;
@@ -269,8 +276,8 @@
     }
 
     .navigation__list {
-        gap: 50px;                          /* Reduced spacing */
-        padding: 30px;
+        gap: 80px;                          /* Reduced spacing */
+        padding: 35px;
         font-size: 16px;
     }
 
@@ -304,7 +311,6 @@
 
     .cta-section {
         gap: 10px;
-        flex-direction: column;             /* Stack buttons vertically */
         align-items: stretch;
     }
 
