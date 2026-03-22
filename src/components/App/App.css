@@ -1,0 +1,29 @@
+.app-shell {
+	position: relative;
+	min-height: 100vh;
+}
+
+.app-content {
+	position: relative;
+	z-index: 2;
+}
+
+.background-particles {
+	position: fixed;
+	inset: 0;
+	z-index: 3;
+	pointer-events: none;
+}
+
+.background-particles > div,
+.background-particles canvas {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.page-header,
+.page-main,
+.page-footer {
+	position: relative;
+	z-index: 4;
+}

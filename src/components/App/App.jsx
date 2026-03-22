@@ -16,26 +16,33 @@ import Home from '../Home/Home';
 import Project from '../Project/Project';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import BackgroundParticles from "../Particles/Particles";
 import './App.css';
 
 function App() {
     return (
-        <Routes>
-            {/* Home page - landing page with introduction */}
-            <Route path="/" element={<Home />} />
+        <div className="app-shell">
+            <BackgroundParticles />
 
-            {/* Projects page - showcase of work */}
-            <Route path="/project" element={<Project />} />
+            <div className="app-content">
+                <Routes>
+                    {/* Home page - landing page with introduction */}
+                    <Route path="/" element={<Home />} />
 
-            {/* About page - personal information */}
-            <Route path="/about" element={<About />} />
+                    {/* Projects page - showcase of work */}
+                    <Route path="/project" element={<Project />} />
 
-            {/* Contact page - contact form */}
-            <Route path="/contact" element={<Contact />} />
+                    {/* About page - personal information */}
+                    <Route path="/about" element={<About />} />
 
-            {/* Fallback - unknown routes redirect to home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+                    {/* Contact page - contact form */}
+                    <Route path="/contact" element={<Contact />} />
+
+                    {/* Fallback - unknown routes redirect to home */}
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+            </div>
+        </div>
     );
 }
 
