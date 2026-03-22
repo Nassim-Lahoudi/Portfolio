@@ -34,33 +34,68 @@
 ## 📁 Project Structure
 
 ```
-Portfolio/
-├── src/
-│   ├── main.jsx                    # Application entry point
-│   ├── index.css                   # Global styles
-│   ├── assets/                     # Images and icons
-│   └── components/
-│       ├── App/
-│       │   ├── App.jsx             # Main app component with routing
-│       │   └── App.css             # App-level styles
-│       ├── Home/
-│       │   ├── Home.jsx            # Landing page component
-│       │   └── Home.css            # Home page styles
-│       ├── About/
-│       │   ├── About.jsx           # About page component
-│       │   └── About.css           # About page styles
-│       ├── Project/
-│       │   ├── Project.jsx         # Projects page component
-│       │   └── Project.css         # Projects page styles
-│       ├── Contact/
-│       │   ├── Contact.jsx         # Contact form component
-│       │   └── Contact.css         # Contact form styles
-├── public/                         # Static assets
-├── index.html                      # HTML entry point
-├── vite.config.js                  # Vite configuration
-├── eslint.config.js                # ESLint configuration
-├── package.json                    # Dependencies and scripts
-└── README.md                       # This file
+Portfolio/                                   # Project root directory
+├── .devcontainer/                           # Development container configuration folder
+│   └── devcontainer.json                    # Dev container setup for VS Code/Codespaces
+├── .github/                                 # GitHub repository configuration
+│   ├── ISSUE_TEMPLATE/                      # Templates for creating GitHub issues
+│   │   ├── bug_report.yml                   # Bug report issue template
+│   │   ├── config.yml                       # Issue template chooser configuration
+│   │   └── feature_request.yml              # Feature request issue template
+│   └── copilot-instructions.md              # Workspace instructions for GitHub Copilot
+├── .ipynb_checkpoints/                      # Auto-generated Jupyter checkpoint files
+│   └── index-checkpoint.html                # Checkpoint copy of an HTML file
+├── .wrangler/                               # Cloudflare Wrangler local state data
+│   └── state/                               # Wrangler state root directory
+│       └── v3/                              # Wrangler state format version
+│           ├── cache/                       # Local cache used by Wrangler
+│           └── workflows/                   # Local workflow state used by Wrangler
+├── .env                                     # Local environment variables (private)
+├── .env.example                             # Example environment variable template
+├── .gitignore                               # Git ignore rules
+├── LICENSE                                  # MIT license text
+├── README.md                                # Project documentation and setup guide
+├── SECURITY.md                              # Security policy and vulnerability reporting
+├── commitMsg.txt                            # Local commit message notes/helper file
+├── eslint.config.js                         # ESLint configuration file
+├── functions/                               # Cloudflare Pages Functions directory
+│   └── _middleware.js                       # Edge middleware for request handling
+├── index.html                               # Main HTML entry point used by Vite
+├── ordnerstruktur.txt                       # This folder/file structure overview
+├── package-lock.json                        # Exact npm dependency lock file
+├── package.json                             # npm scripts, dependencies, and metadata
+├── public/                                  # Public static files served as-is
+├── src/                                     # Application source code
+│   ├── assets/                              # Source-controlled design assets
+│   │   └── icons/                           # Icon and image assets used in components
+│   │       ├── Portfolio Design.png         # Portfolio design preview image
+│   │       ├── aboutme-symbol.png           # About page icon
+│   │       ├── code-termial-symbol.png      # Coding/terminal themed icon
+│   │       ├── dev-symbol.png               # Development symbol icon
+│   │       ├── email-symbol.png             # Email/contact icon
+│   │       ├── github-symbol.png            # GitHub icon
+│   │       ├── home-symbol.png              # Home page icon
+│   │       ├── linkedin-symbol.png          # LinkedIn icon
+│   │       └── nassim-lahoudi.png           # Personal profile image
+│   ├── components/                          # React UI components grouped by page
+│   │   ├── About/                           # About page component folder
+│   │   │   ├── About.css                    # Styles for About page
+│   │   │   └── About.jsx                    # About page React component
+│   │   ├── App/                             # Main app shell and routing folder
+│   │   │   ├── App.css                      # App-level styles
+│   │   │   └── App.jsx                      # Root app component with routes
+│   │   ├── Contact/                         # Contact page component folder
+│   │   │   ├── Contact.css                  # Styles for Contact page
+│   │   │   └── Contact.jsx                  # Contact page React component
+│   │   ├── Home/                            # Home page component folder
+│   │   │   ├── Home.css                     # Styles for Home page
+│   │   │   └── Home.jsx                     # Home page React component
+│   │   └── Project/                         # Projects page component folder
+│   │       ├── Project.css                  # Styles for Projects page
+│   │       └── Project.jsx                  # Projects page React component
+│   ├── index.css                            # Global stylesheet
+│   └── main.jsx                             # React/Vite application bootstrap file
+└── vite.config.js                           # Vite bundler configuration
 ```
 
 ## 🚀 Getting Started
