@@ -10,22 +10,29 @@
  */
 
 import { Link } from "react-router-dom";
+import homeIcon from "../../assets/icons/home-symbol.png";
+import projectsIcon from "../../assets/icons/code-termial-symbol.png";
+import aboutIcon from "../../assets/icons/aboutme-symbol.png";
+import contactIcon from "../../assets/icons/email-symbol.png";
+import githubIcon from "../../assets/icons/github-symbol.png";
+import linkedinIcon from "../../assets/icons/linkedin-symbol.png";
+import devIcon from "../../assets/icons/dev-symbol.png";
 import './Home.css';
 
 function Home() {
     // Navigation menu items configuration
     const navigationItems = [
-        { to: "/", img: "/icons/home-symbol.png", alt: "Home" },
-        { to: "/Project", img: "/icons/code-termial-symbol.png", alt: "Projects" },
-        { to: "/About", img: "/icons/aboutme-symbol.png", alt: "About Me" },
-        { to: "/Contact", img: "/icons/email-symbol.png", alt: "Contact Me" }
+        { to: "/", img: homeIcon, alt: "Home" },
+        { to: "/Project", img: projectsIcon, alt: "Projects" },
+        { to: "/About", img: aboutIcon, alt: "About Me" },
+        { to: "/Contact", img: contactIcon, alt: "Contact Me" }
     ];
 
     // Social media links configuration
     const socialLinks = [
-        { href: "https://github.com/Nassim-Lahoudi", img: "/icons/github-symbol.png", alt: "GitHub" },
-        { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: "/icons/linkedin-symbol.png", alt: "LinkedIn" },
-        { href: "https://dev.to/nassim-lahoudi", img: "/icons/dev-symbol.png", alt: "Dev.to" }
+        { href: "https://github.com/Nassim-Lahoudi", img: githubIcon, alt: "GitHub" },
+        { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: linkedinIcon, alt: "LinkedIn" },
+        { href: "https://dev.to/nassim-lahoudi", img: devIcon, alt: "Dev.to" }
     ];
 
     return (

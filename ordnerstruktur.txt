@@ -1,0 +1,31 @@
+public/
+`-- icons/
+    |-- Portfolio Design.png
+    |-- aboutme-symbol.png
+    |-- code-termial-symbol.png
+    |-- dev-symbol.png
+    |-- email-symbol.png
+    |-- github-symbol.png
+    |-- home-symbol.png
+    |-- linkedin-symbol.png
+    `-- nassim-lahoudi.png
+src/
+|-- assets/
+|-- components/
+|   |-- About/
+|   |   |-- About.css
+|   |   `-- About.jsx
+|   |-- App/
+|   |   |-- App.css
+|   |   `-- App.jsx
+|   |-- Contact/
+|   |   |-- Contact.css
+|   |   `-- Contact.jsx
+|   |-- Home/
+|   |   |-- Home.css
+|   |   `-- Home.jsx
+|   `-- Project/
+|       |-- Project.css
+|       `-- Project.jsx
+|-- index.css
+`-- main.jsx
