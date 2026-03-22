@@ -1,38 +1,44 @@
 export async function onRequest(context) {
-  // Call the next handler in the chain.
-  // This tells Cloudflare Pages to continue processing the request normally
-  // (serving static files, running other functions, etc.)
-  // and then return the generated response so we can modify it.
+  // Execute the next handler in the request chain.
+  // This allows Cloudflare Pages to serve the requested file normally
+  // (static asset, HTML, API route, etc.) before we modify the response.
   const response = await context.next();
 
-  // Parse the incoming request URL so we can inspect the path.
-  // This allows us to check which file is being requested.
+  // Parse the request URL so we can inspect the path and file extension.
   const url = new URL(context.request.url);
 
-  // We only want to apply long-term caching to static assets.
-  // These files rarely change and are safe to cache for a long time.
+  // Determine whether the request targets a static asset.
+  // We treat the following as static:
+  // - Anything inside the /assets/ directory (Vite build output)
+  // - Files ending with common static extensions (images, CSS, JS, fonts)
   //
-  // The conditions below check:
-  // 1. If the file is inside the /assets/ folder (Vite build output)
-  // 2. OR if the file extension matches common static file types:
-  //    images, CSS, JS, fonts, icons, etc.
-  //
-  // If the request matches any of these, we set a strong cache header.
-  if (
+  // This ensures we only apply long-term caching to files that are safe
+  // to cache aggressively because Vite generates hashed filenames.
+  const isStaticAsset =
     url.pathname.startsWith("/assets/") ||
-    url.pathname.match(/\.(png|jpg|jpeg|svg|webp|ico|css|js|woff2)$/)
-  ) {
-    // Set a long-term cache header:
+    url.pathname.match(/\.(png|jpg|jpeg|svg|webp|ico|css|js|woff2)$/);
+
+  if (isStaticAsset) {
+    // Cloudflare Pages sets a default Cache-Control header for JS files:
+    //   public, max-age=0, must-revalidate
     //
-    // public        → allows browser + CDN caching
-    // max-age=31536000 → cache for 1 year (in seconds)
-    // immutable     → tells the browser the file will never change
+    // This prevents long-term caching unless we explicitly override it.
+    // To ensure our custom header is applied, we first remove the existing one.
+    response.headers.delete("Cache-Control");
+
+    // Apply long-term caching:
+    // - public: allows browser + CDN caching
+    // - max-age=31536000: cache for 1 year (in seconds)
+    // - immutable: tells the browser the file will never change
     //
-    // This is safe because Vite generates hashed filenames,
-    // so when the file changes, the filename also changes.
-    response.headers.set("Cache-Control", "public, max-age=31536000, immutable");
+    // This is safe because Vite generates unique hashed filenames
+    // whenever the file content changes.
+    response.headers.set(
+      "Cache-Control",
+      "public, max-age=31536000, immutable"
+    );
   }
 
-  // Return the modified response back to the user.
+  // Return the modified response back to the client.
   return response;
 }
