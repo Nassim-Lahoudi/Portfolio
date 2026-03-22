@@ -5,15 +5,9 @@
  * Includes responsive design for mobile and tablet devices.
  */
 
-/* ========== FONTS ========== */
-/* Import PT Serif from Google Fonts for elegant headings */
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 /* ========== BASE LAYOUT ========== */
 /* Main page container and global styles */
-.page-container, html, body {
-    margin: 0;                          /* Remove default margins */
-    user-select: none;                  /* Prevent text selection for cleaner UX */
+.page-container {
     background-color: #0d0d0d;          /* Dark background for modern aesthetic */
 }
 
@@ -29,13 +23,6 @@
 .page-main,
 .page-footer {
     position: relative;
-}
-
-/* ========== GLOBAL DEFAULTS ========== */
-/* Set default font and remove list markers */
-* {
-    font-family: Arial, Helvetica, sans-serif;
-    list-style-type: none;
 }
 
 /* ========== HEADER & NAVIGATION ========== */
@@ -177,11 +164,6 @@
     text-align: center;
     font-size: 25px;
     margin-top: 25px;
-}
-
-/* Serif font class for elegant typography */
-.serif-font {
-    font-family: "PT Serif", serif;
 }
 
 /* ========== CTA (Call-to-Action) SECTION ========== */

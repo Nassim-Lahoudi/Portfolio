@@ -15,37 +15,17 @@
  * - Form submission status feedback
  */
 
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
-import homeIcon from "../../assets/icons/home-symbol.png";
-import projectsIcon from "../../assets/icons/code-termial-symbol.png";
-import aboutIcon from "../../assets/icons/aboutme-symbol.png";
-import contactIcon from "../../assets/icons/email-symbol.png";
-import githubIcon from "../../assets/icons/github-symbol.png";
-import linkedinIcon from "../../assets/icons/linkedin-symbol.png";
-import devIcon from "../../assets/icons/dev-symbol.png";
+import SiteLayout from "../Layout/SiteLayout";
 import './Contact.css';
 
 function Contact() {
     // Form submission status: '', 'sending', 'success', 'error'
     const [status, setStatus] = useState('');
 
-    // Navigation menu items configuration
-    const navigationItems = [
-        { to: "/", img: homeIcon, alt: "Home" },
-        { to: "/Project", img: projectsIcon, alt: "Projects" },
-        { to: "/About", img: aboutIcon, alt: "About Me" },
-        { to: "/Contact", img: contactIcon, alt: "Contact Me" }
-    ];
-
-
-    // Social media links configuration
-    const socialLinks = [
-        { href: "https://github.com/Nassim-Lahoudi", img: githubIcon, alt: "GitHub" },
-        { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: linkedinIcon, alt: "LinkedIn" },
-        { href: "https://dev.to/nassim-lahoudi", img: devIcon, alt: "Dev.to" }
-    ];
+    const handleInvalidField = (e) => e.target.setCustomValidity("Please fill out this field.");
+    const clearInvalidField = (e) => e.target.setCustomValidity("");
 
     /**
      * Handle form submission via EmailJS
@@ -85,26 +65,7 @@ function Contact() {
     };
 
     return (
-        <div className="page-container">
-            {/* ========== HEADER: Navigation Bar ========== */}
-            <header className="page-header">
-                <nav className="navigation" role="navigation" aria-label="Main navigation">
-                    <ul className="navigation__list">
-                        {navigationItems.map((item, idx) => (
-                            <li className="navigation__item" key={idx}>
-                                <Link to={item.to} className="navigation__link" aria-label={item.alt}>
-                                    <img
-                                        src={item.img}
-                                        alt={item.alt}
-                                        className="navigation__icon"
-                                    />
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-            </header>
-
+        <SiteLayout>
             {/* ========== MAIN: Contact Form ========== */}
             <main className="page-main contact-main">
                 <section className="contact-content">
@@ -131,8 +92,8 @@ function Contact() {
                                     className="form-input"
                                     placeholder="First name"
                                     required
-                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")}
-                                    onInput={(e) => e.target.setCustomValidity("")}
+                                    onInvalid={handleInvalidField}
+                                    onInput={clearInvalidField}
                                 />
                             </div>
 
@@ -145,8 +106,8 @@ function Contact() {
                                     className="form-input"
                                     placeholder="Last name"
                                     required
-                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")}
-                                    onInput={(e) => e.target.setCustomValidity("")}
+                                    onInvalid={handleInvalidField}
+                                    onInput={clearInvalidField}
                                 />
                             </div>
                         </div>
@@ -162,8 +123,8 @@ function Contact() {
                                     className="form-input"
                                     placeholder="you@company.com"
                                     required
-                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")}
-                                    onInput={(e) => e.target.setCustomValidity("")}
+                                    onInvalid={handleInvalidField}
+                                    onInput={clearInvalidField}
                                 />
                             </div>
                         </div>
@@ -178,8 +139,8 @@ function Contact() {
                                     className="form-textarea"
                                     placeholder="Leave me a message..."
                                     required
-                                    onInvalid={(e) => e.target.setCustomValidity("Please fill out this field.")}
-                                    onInput={(e) => e.target.setCustomValidity("")}
+                                    onInvalid={handleInvalidField}
+                                    onInput={clearInvalidField}
                                 />
                             </div>
                         </div>
@@ -216,32 +177,7 @@ function Contact() {
                     </form>
                 </section>
             </main>
-
-            {/* ========== FOOTER: Social Media Links ========== */}
-            <footer className="page-footer">
-                <section className="social-section">
-                    <ul className="social-list" role="list">
-                        {socialLinks.map((item, idx) => (
-                            <li key={idx}>
-                                <a
-                                    href={item.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="social-link"
-                                    aria-label={item.alt}
-                                >
-                                    <img
-                                        src={item.img}
-                                        alt={item.alt}
-                                        className="social-icon"
-                                    />
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
-            </footer>
-        </div>
+        </SiteLayout>
     );
 }
 

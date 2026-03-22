@@ -5,9 +5,6 @@
  * Inherits common styles from Home.css for navigation and footer.
  */
 
-/* ========== FONTS ========== */
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 /* ========== MAIN CONTENT ========== */
 .about-main {
     display: flex;
@@ -255,16 +252,6 @@
     color: #bbb;
     line-height: 1.6;
     margin: 0.75rem 0 0 0;
-}
-
-/* ========== GLOBAL DEFAULTS ========== */
-* {
-    font-family: Arial, Helvetica, sans-serif;
-    list-style-type: none;
-}
-
-.serif-font {
-    font-family: 'PT Serif', serif;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */

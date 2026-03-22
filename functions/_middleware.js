@@ -18,6 +18,28 @@ export async function onRequest(context) {
     url.pathname.startsWith("/assets/") ||
     url.pathname.match(/\.(png|jpg|jpeg|svg|webp|ico|css|js|woff2)$/);
 
+  // Security headers for all responses.
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  response.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+  response.headers.set("X-Frame-Options", "DENY");
+
+  // CSP in report-only mode to avoid accidental production breakage while hardening.
+  response.headers.set(
+    "Content-Security-Policy-Report-Only",
+    [
+      "default-src 'self'",
+      "img-src 'self' data: https:",
+      "script-src 'self'",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com",
+      "connect-src 'self' https://api.emailjs.com",
+      "frame-ancestors 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+    ].join("; ")
+  );
+
   if (isStaticAsset) {
     // Cloudflare Pages sets a default Cache-Control header for JS files:
     //   public, max-age=0, must-revalidate

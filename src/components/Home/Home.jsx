@@ -10,59 +10,19 @@
  */
 
 import { Link } from "react-router-dom";
-import homeIcon from "../../assets/icons/home-symbol.png";
-import projectsIcon from "../../assets/icons/code-termial-symbol.png";
-import aboutIcon from "../../assets/icons/aboutme-symbol.png";
-import contactIcon from "../../assets/icons/email-symbol.png";
-import githubIcon from "../../assets/icons/github-symbol.png";
-import linkedinIcon from "../../assets/icons/linkedin-symbol.png";
-import devIcon from "../../assets/icons/dev-symbol.png";
+import SiteLayout from "../Layout/SiteLayout";
 import './Home.css';
 
 function Home() {
-    // Navigation menu items configuration
-    const navigationItems = [
-        { to: "/", img: homeIcon, alt: "Home" },
-        { to: "/Project", img: projectsIcon, alt: "Projects" },
-        { to: "/About", img: aboutIcon, alt: "About Me" },
-        { to: "/Contact", img: contactIcon, alt: "Contact Me" }
-    ];
-
-    // Social media links configuration
-    const socialLinks = [
-        { href: "https://github.com/Nassim-Lahoudi", img: githubIcon, alt: "GitHub" },
-        { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: linkedinIcon, alt: "LinkedIn" },
-        { href: "https://dev.to/nassim-lahoudi", img: devIcon, alt: "Dev.to" }
-    ];
-
     return (
-        <div className="page-container">
-            {/* ========== HEADER: Navigation Bar ========== */}
-            <header className="page-header">
-                <nav className="navigation" role="navigation" aria-label="Main navigation">
-                    <ul className="navigation__list">
-                        {navigationItems.map((item, idx) => (
-                            <li className="navigation__item" key={idx}>
-                                <Link to={item.to} className="navigation__link" aria-label={item.alt}>
-                                    <img
-                                        src={item.img}
-                                        alt={item.alt}
-                                        className="navigation__icon"
-                                    />
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-            </header>
-
+        <SiteLayout>
             {/* ========== MAIN: Hero Section ========== */}
             <main className="page-main">
                 {/* Skills showcase section */}
                 <section className="skills-section">
                     <ul className="skills-list">
-                        {["Web Design", "UX & UI Design", "Branding"].map((text, idx) => (
-                            <li key={idx}>
+                        {["Web Design", "UX & UI Design", "Branding"].map((text) => (
+                            <li key={text}>
                                 <button className="skill-tag">{text}</button>
                             </li>
                         ))}
@@ -84,41 +44,16 @@ function Home() {
                 {/* Call-to-action section */}
                 <section className="cta-section">
                     {/* Primary button linking to Projects page */}
-                    <Link to="/Project" className="button button--primary">
+                    <Link to="/project" className="button button--primary">
                         See Projects
                     </Link>
                     {/* Secondary button linking to Contact page */}
-                    <Link to="/Contact" className="button button--secondary">
+                    <Link to="/contact" className="button button--secondary">
                         Contact me
                     </Link>
                 </section>
             </main>
-
-            {/* ========== FOOTER: Social Media Links ========== */}
-            <footer className="page-footer">
-                <section className="social-section">
-                    <ul className="social-list" role="list">
-                        {socialLinks.map((item, idx) => (
-                            <li key={idx}>
-                                <a
-                                    href={item.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="social-link"
-                                    aria-label={item.alt}
-                                >
-                                    <img
-                                        src={item.img}
-                                        alt={item.alt}
-                                        className="social-icon"
-                                    />
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
-            </footer>
-        </div>
+        </SiteLayout>
     );
 }
 

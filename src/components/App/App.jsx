@@ -11,7 +11,7 @@
  * - /contact : Contact form page
  */
 
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 import Home from '../Home/Home';
 import Project from '../Project/Project';
 import About from '../About/About';
@@ -32,6 +32,9 @@ function App() {
 
             {/* Contact page - contact form */}
             <Route path="/contact" element={<Contact />} />
+
+            {/* Fallback - unknown routes redirect to home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );
 }

@@ -5,8 +5,7 @@
  * These styles ensure consistent appearance across all pages.
  */
 
-body, html {
-    user-select: none;        /* Prevent text selection for cleaner UI */
-    margin: 0;                /* Remove default browser margins */
-    background-color: black;  /* Dark background for modern aesthetic */
+body,
+html {
+    margin: 0;
 }

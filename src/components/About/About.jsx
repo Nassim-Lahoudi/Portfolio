@@ -9,33 +9,11 @@
  * - Footer: Social media links (shared across pages)
  */
 
-import { Link } from "react-router-dom";
-import homeIcon from "../../assets/icons/home-symbol.png";
-import projectsIcon from "../../assets/icons/code-termial-symbol.png";
-import aboutIcon from "../../assets/icons/aboutme-symbol.png";
-import contactIcon from "../../assets/icons/email-symbol.png";
-import githubIcon from "../../assets/icons/github-symbol.png";
-import linkedinIcon from "../../assets/icons/linkedin-symbol.png";
-import devIcon from "../../assets/icons/dev-symbol.png";
 import profileImage from "../../assets/icons/nassim-lahoudi.png";
+import SiteLayout from "../Layout/SiteLayout";
 import './About.css';
 
 function About() {
-    // Navigation menu items configuration
-    const navigationItems = [
-        { to: "/", img: homeIcon, alt: "Home" },
-        { to: "/Project", img: projectsIcon, alt: "Projects" },
-        { to: "/About", img: aboutIcon, alt: "About Me" },
-        { to: "/Contact", img: contactIcon, alt: "Contact Me" }
-    ];
-
-    // Social media links configuration
-    const socialLinks = [
-        { href: "https://github.com/Nassim-Lahoudi", img: githubIcon, alt: "GitHub" },
-        { href: "https://www.linkedin.com/in/nassim-lahoudi/", img: linkedinIcon, alt: "LinkedIn" },
-        { href: "https://dev.to/nassim-lahoudi", img: devIcon, alt: "Dev.to" }
-    ];
-
     // Skills data
     const skillCategories = [
         {
@@ -69,26 +47,7 @@ function About() {
     ];
 
     return (
-        <div className="page-container">
-            {/* ========== HEADER: Navigation Bar ========== */}
-            <header className="page-header">
-                <nav className="navigation" role="navigation" aria-label="Main navigation">
-                    <ul className="navigation__list">
-                        {navigationItems.map((item, idx) => (
-                            <li className="navigation__item" key={idx}>
-                                <Link to={item.to} className="navigation__link" aria-label={item.alt}>
-                                    <img
-                                        src={item.img}
-                                        alt={item.alt}
-                                        className="navigation__icon"
-                                    />
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-            </header>
-
+        <SiteLayout>
             {/* ========== MAIN: About Content ========== */}
             <main className="page-main about-main">
                 {/* Profile Hero Section */}
@@ -124,12 +83,12 @@ function About() {
                 <section className="skills-showcase">
                     <h2 className="section-title serif-font">Skills & Technologies</h2>
                     <div className="skills-grid">
-                        {skillCategories.map((category, idx) => (
-                            <div className="skill-category" key={idx}>
+                        {skillCategories.map((category) => (
+                            <div className="skill-category" key={category.category}>
                                 <h3 className="category-title">{category.category}</h3>
                                 <div className="skill-tags">
-                                    {category.skills.map((skill, skillIdx) => (
-                                        <span className="skill-badge" key={skillIdx}>
+                                    {category.skills.map((skill) => (
+                                        <span className="skill-badge" key={skill}>
                                             {skill}
                                         </span>
                                     ))}
@@ -143,8 +102,8 @@ function About() {
                 <section className="experience-timeline">
                     <h2 className="section-title serif-font">Journey</h2>
                     <div className="timeline">
-                        {timeline.map((item, idx) => (
-                            <div className="timeline-item" key={idx}>
+                        {timeline.map((item) => (
+                            <div className="timeline-item" key={item.year}>
                                 <div className="timeline-marker"></div>
                                 <div className="timeline-content">
                                     <span className="timeline-year">{item.year}</span>
@@ -157,32 +116,7 @@ function About() {
                     </div>
                 </section>
             </main>
-
-            {/* ========== FOOTER: Social Media Links ========== */}
-            <footer className="page-footer">
-                <section className="social-section">
-                    <ul className="social-list" role="list">
-                        {socialLinks.map((item, idx) => (
-                            <li key={idx}>
-                                <a
-                                    href={item.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="social-link"
-                                    aria-label={item.alt}
-                                >
-                                    <img
-                                        src={item.img}
-                                        alt={item.alt}
-                                        className="social-icon"
-                                    />
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
-            </footer>
-        </div>
+        </SiteLayout>
     );
 }
 
