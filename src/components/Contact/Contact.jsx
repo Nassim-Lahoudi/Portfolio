@@ -47,6 +47,10 @@ function Contact() {
         { href: "https://dev.to/nassim-lahoudi", img: devIcon, alt: "Dev.to" }
     ];
 
+    const imprintLink = [
+        { to: "/Imprint", alt: "Imprint" }
+    ];
+
     /**
      * Handle form submission via EmailJS
      * @param {Event} e - Form submit event
@@ -239,6 +243,15 @@ function Contact() {
                             </li>
                         ))}
                     </ul>
+                </section>
+
+                {/* ========== FOOTER: Imprint Links ========== */}
+                <section className="imprint-section">
+                    {imprintLink.map((item, idx) => (
+                        <li key={idx}>
+                            <Link to={item.to} className="hyperlink-style" aria-label={item.alt} >Imprint</Link>
+                        </li>
+                        ))}
                 </section>
             </footer>
         </div>

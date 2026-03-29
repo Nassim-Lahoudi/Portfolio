@@ -16,6 +16,7 @@ import Home from '../Home/Home';
 import Project from '../Project/Project';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import Imprint from '../Imprint/Imprint';
 import './App.css';
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
 
             {/* Contact page - contact form */}
             <Route path="/contact" element={<Contact />} />
+
+            {/* Imprint page - imprint form */}
+            <Route path="/imprint" element={<Imprint />} />
         </Routes>
     );
 }

@@ -268,6 +268,17 @@
     cursor: pointer;
 }
 
+.imprint-section{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.hyperlink-style{
+    color: grey;
+    text-decoration: none;
+}
+
 /* ========== RESPONSIVE DESIGN ========== */
 /* Tablet and smaller devices (max-width: 900px) */
 @media (max-width: 900px) {
