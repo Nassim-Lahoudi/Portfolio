@@ -1,12 +1,12 @@
 /**
- * Home Component
+ * Imprint Component
  *
- * The landing page of the portfolio website.
+ * Renders the legal notice (imprint) page.
  *
  * Structure:
- * - Header: Main navigation with icon links
- * - Main: Hero section with introduction and CTAs
- * - Footer: Social media links
+ * - Header: Main navigation shared across all pages
+ * - Main: Legal and contact information
+ * - Footer: Social links and imprint shortcut
  */
 
 import { Link } from "react-router-dom";
@@ -17,15 +17,15 @@ import contactIcon from "../../assets/icons/email-symbol.png";
 import githubIcon from "../../assets/icons/github-symbol.png";
 import linkedinIcon from "../../assets/icons/linkedin-symbol.png";
 import devIcon from "../../assets/icons/dev-symbol.png";
-import './Home.css';
+import './Imprint.css';
 
-function Home() {
+function Imprint() {
     // Navigation menu items configuration
     const navigationItems = [
         { to: "/", img: homeIcon, alt: "Home" },
         { to: "/Project", img: projectsIcon, alt: "Projects" },
         { to: "/About", img: aboutIcon, alt: "About Me" },
-        { to: "/Contact", img: contactIcon, alt: "Contact Me" },
+        { to: "/Contact", img: contactIcon, alt: "Contact Me" }
     ];
 
     // Social media links configuration
@@ -35,6 +35,7 @@ function Home() {
         { href: "https://dev.to/nassim-lahoudi", img: devIcon, alt: "Dev.to" }
     ];
 
+    // Footer link pointing to the current imprint page.
     const imprintLink = [
         { to: "/Imprint", alt: "Imprint" }
     ];
@@ -62,40 +63,52 @@ function Home() {
 
             {/* ========== MAIN: Hero Section ========== */}
             <main className="page-main">
-                {/* Skills showcase section */}
-                <section className="skills-section">
-                    <ul className="skills-list">
-                        {["Web Design", "UX & UI Design", "Branding"].map((text, idx) => (
-                            <li key={idx}>
-                                <button className="skill-tag">{text}</button>
-                            </li>
-                        ))}
-                    </ul>
-                </section>
+                <div className="imprint-headline-container">
+                    <h1 className="headline">Imprint</h1>
+                    <p className="imprint-subtitle">Imprint and legal information for this personal portfolio website.</p>
+                </div>
+                <div className="imprint-container">
+                    <div className="imprint-content">
+                        <p className="title imprint-text-style">As of: 01 April 2026</p>
 
-                {/* Hero introduction section */}
-                <section className="hero-section">
-                    <h1 className="hero-title serif-font">
-                        I'm Nassim,<br />
-                        {/* Highlighted role with white text */}
-                        <span className="hero-title--highlight serif-font">Software Developer.</span>
-                    </h1>
-                    <p className="hero-subtitle">
-                        Frankfurt-based aspiring state-certified business IT assistant building tomorrow's tech.
-                    </p>
-                </section>
+                        <h2 className="sec-headline imprint-headline-style">Information pursuant to § 5 TMG</h2>
+                        <p className="title imprint-text-style">
+                            Nassim Lahoudi <br />
+                            Sierinstraße 28, <br />
+                            65929 Frankfurt am Main <br />
+                            Germany
+                        </p>
 
-                {/* Call-to-action section */}
-                <section className="cta-section">
-                    {/* Primary button linking to Projects page */}
-                    <Link to="/Project" className="button button--primary">
-                        See Projects
-                    </Link>
-                    {/* Secondary button linking to Contact page */}
-                    <Link to="/Contact" className="button button--secondary">
-                        Contact me
-                    </Link>
-                </section>
+                        <h2 className="sec-headline imprint-headline-style">Contact</h2>
+                        <p className="title imprint-text-style">Email: info@nassim-lahoudi.de</p>
+
+                        <h2 className="sec-headline imprint-headline-style">Responsible for content pursuant to § 18 Para. 2 MStV</h2>
+                        <p className="title imprint-text-style">
+                            Nassim Lahoudi <br />
+                            Address as above
+                        </p>
+
+                        <h2 className="sec-headline imprint-headline-style">Liability for Content</h2>
+                        <p className="title imprint-text-style">
+                            As a service provider, I am responsible for my own content on these pages in accordance with general laws. <br />
+                            However, I am not obligated under statutory provisions to monitor transmitted or stored third-party information <br />
+                            or to investigate circumstances that indicate illegal activity.
+                        </p>
+
+                        <h2 className="sec-headline imprint-headline-style">Liability for Links</h2>
+                        <p className="title imprint-text-style">
+                            This website contains links to external third-party websites whose content I have no influence over. <br />
+                            Therefore, I cannot accept any liability for such third-party content. <br />
+                            The respective provider or operator of the linked pages is always responsible for their content.
+                        </p>
+                        <h2 className="sec-headline imprint-headline-style">Copyright</h2>
+                        <p className="title imprint-text-style">
+                            The content and works created by the site operator on this website are subject to German copyright law. <br />
+                            Reproduction, editing, distribution, and any form of exploitation beyond the limits of copyright law <br />
+                            require the written consent of the respective author or creator.
+                        </p>
+                    </div>
+                </div>
             </main>
 
             {/* ========== FOOTER: Social Media Links ========== */}
@@ -122,7 +135,7 @@ function Home() {
                     </ul>
                 </section>
 
-                {/* ========== FOOTER: Imprint Links ========== */}
+                {/* ========== FOOTER: Imprint quick Link ========== */}
                 <section className="imprint-section">
                     {imprintLink.map((item, idx) => (
                         <li key={idx}>
@@ -135,4 +148,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Imprint;
