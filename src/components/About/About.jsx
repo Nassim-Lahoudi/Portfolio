@@ -62,7 +62,7 @@ function About() {
             year: "08/2024 - 06/2026",
             title: "State-Certified Business IT Assistant",
             subtitle: "Information Processing & Business",
-            description: "Currently in vocational training – Expected completion in 2026"
+            description: "Successfully completed vocational training in 2026"
         },
         {
             year: "06/2024",
