@@ -179,7 +179,7 @@ function Project() {
                                             className="project-link project-link--live"
                                             aria-label="View live demo"
                                         >
-                                            <span>Live Demo</span>
+                                            <span>Visit Site</span>
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                 <path d="M3 3L13 13M13 13V5M13 13H5" stroke="currentColor" strokeWidth="2"/>
                                             </svg>
