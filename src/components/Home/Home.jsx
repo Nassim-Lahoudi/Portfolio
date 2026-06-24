@@ -78,10 +78,10 @@ function Home() {
                     <h1 className="hero-title serif-font">
                         I'm Nassim,<br />
                         {/* Highlighted role with white text */}
-                        <span className="hero-title--highlight serif-font">Software Developer.</span>
+                        <span className="hero-title--highlight serif-font">Business IT Assistant.</span>
                     </h1>
                     <p className="hero-subtitle">
-                        Frankfurt-based aspiring state-certified business IT assistant building tomorrow's tech.
+                        Frankfurt‑based state‑certified business IT assistant with a passion for building digital projects.
                     </p>
                 </section>
 

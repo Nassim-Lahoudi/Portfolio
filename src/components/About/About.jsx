@@ -106,7 +106,7 @@ function About() {
                     </div>
                     <div className="profile-info">
                         <h1 className="profile-name serif-font">Nassim Lahoudi</h1>
-                        <p className="profile-title">Business IT Assistant in Training</p>
+                        <p className="profile-title">State‑Certified Business IT Assistant</p>
                         <p className="profile-location">📍 Frankfurt, Germany</p>
                     </div>
                 </section>
@@ -115,12 +115,12 @@ function About() {
                 <section className="about-description">
                     <h2 className="section-title serif-font">About Me</h2>
                     <p className="about-text">
-                        I'm an aspiring state-certified business IT assistant with a passion for modern web technologies.
-                        Currently completing my vocational training while developing practical projects to continuously expand my skills.
+                        I'm a state-certified business IT assistant with a passion for modern web technologies.
+                        I build practical digital projects to continuously expand my technical and creative skill set.
                     </p>
                     <p className="about-text">
-                        With solid knowledge in both frontend and backend development, I bring creative ideas to life through code.
-                        My approach combines technical expertise with business understanding to create innovative and user-friendly solutions.
+                        With knowledge in both frontend and backend development, I bring ideas to life through clean and structured code.
+                        My work combines technical understanding with business-oriented thinking to create user-friendly and effective solutions.
                     </p>
                 </section>
 
