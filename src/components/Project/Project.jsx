@@ -42,11 +42,11 @@ function Project() {
     // Project portfolio data
     const projects = [
         {
-            title: "Windows Configuration Tool",
-            description: "A terminal‑based automation tool for configuring and optimizing Windows systems. It applies system tweaks, removes unwanted printers, manages startup apps, installs selected software, and performs maintenance tasks with clear success indicators for each action. ",
-            technologies: ["Python", "Tkinter"],
-            github: "https://github.com/Nassim-Lahoudi/Windows-Configuration-Tool",
-            live: null,
+            title: "Portfolio",
+            description: "A modern personal portfolio designed to showcase my projects, skills, and experience. It features a responsive layout, dynamic project sections, and a clean, professional presentation.",
+            technologies: ["HTML", "CSS", "JavaScript", "React"],
+            github: "https://github.com/Nassim-Lahoudi/Portfolio",
+            live: "https://nassim-lahoudi.de",
             featured: true
         },
         {
